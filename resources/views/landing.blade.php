@@ -93,7 +93,7 @@
                 <br>
                 <h1>Selamat Datang di Buku Tamu</h1>
                 <p>Terima kasih telah mengunjungi website Dinas Komunikasi dan Informatika Kabupaten Purbalingga. Silakan tulis keperluan Anda di buku tamu kami.</p>
-                <a class="bukutamu-link" href="{{ url('home') }}">Buka Buku Tamu</a>
+                <a class="bukutamu-link" href="{{ url('form') }}">Buka Buku Tamu</a>
             </div>
         </div>
     </div>
