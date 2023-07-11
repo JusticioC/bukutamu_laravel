@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita511e28fbac6532aa20565fc0e395143
+class ComposerStaticInit4a872b4466b023c2b493ad21605b29a4
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -642,6 +642,7 @@ class ComposerStaticInita511e28fbac6532aa20565fc0e395143
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\BukutamuSeeder' => __DIR__ . '/../..' . '/database/seeders/BukutamuSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
@@ -6350,9 +6351,9 @@ class ComposerStaticInita511e28fbac6532aa20565fc0e395143
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita511e28fbac6532aa20565fc0e395143::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita511e28fbac6532aa20565fc0e395143::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita511e28fbac6532aa20565fc0e395143::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4a872b4466b023c2b493ad21605b29a4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4a872b4466b023c2b493ad21605b29a4::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit4a872b4466b023c2b493ad21605b29a4::$classMap;
 
         }, null, ClassLoader::class);
     }

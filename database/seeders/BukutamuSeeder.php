@@ -14,6 +14,6 @@ class BukutamuSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::unprepared(file_get_contents('D:\UNSOED\MATERI\Kerja Praktik\bukutamu\bukutamu.sql'));
+        DB::unprepared(file_get_contents('D:\XAMPP\htdocs\project\bukutamu_laravel\bukutamu_laravel\bukutamu.sql'));
     }
 }
