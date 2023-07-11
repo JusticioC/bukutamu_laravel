@@ -163,7 +163,7 @@
             </div>
         @endif
 
-        <form action="{{ url('form') }}" method="POST">
+        <form action="{{ url('sukses') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nama Lengkap</label>
