@@ -40,3 +40,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 //Rute untuk form
 Route::get('/form', [FormController::class, 'showForm'])->name('form.show');
 Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit');
+
+Route::get('/sukses', function () {
+    return view('sukses');
+});
