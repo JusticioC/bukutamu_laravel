@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LandingController;
-
+use App\Http\Controllers\SuksesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +41,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/form', [FormController::class, 'showForm'])->name('form.show');
 Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit');
 
+//Rute sukses
 Route::get('/sukses', function () {
     return view('sukses');
 });
+Route::post('/sukses', [SuksesController::class, 'store'])->name('sukses.store');

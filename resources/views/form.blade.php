@@ -164,7 +164,7 @@
             </div>
         @endif
 
-        <form action="{{ url('sukses') }}" method="POST">
+        <form action="{{ route('sukses.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nama Lengkap</label>
@@ -205,7 +205,7 @@
                 <textarea name="saran" class="form-control" placeholder="Kritik dan Saran"></textarea>
             </div>
 
-            <input type="submit" name="submit" class="btn" required value="Tambah">
+            <input type="submit" name="submit" class="btn" required value="Kirim">
             <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
         </form>
     </div>
