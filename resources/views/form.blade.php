@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Formulir</title>
+    <title>DINAS KOMUNIKASI DAN INFORMATIKA</title>
+    <link href="{{ asset('assets/images/pbg.png') }}" rel="shortcut icon">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <style>
     .form-group label {
