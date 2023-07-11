@@ -86,11 +86,14 @@
                                 <button class="btn btn-primary pull-right" name="Submit" value="Login">LOGIN</button>
                             </table>
                         </form>
+                        <br>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <center><a href="{{ url('/') }}" class="btn btn-primary">Kembali ke Halaman Utama</a></center>
+
     <!-- /.container -->
 
     <!-- Footer -->
