@@ -7,7 +7,7 @@
     <meta name="author" content="">
 
     <title>DINAS KOMUNIKASI DAN INFORMATIKA</title>
-    <link href="{{ asset('assets/images/pbg.png') }}" rel="shortcut icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/pbg.png') }}"/>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
