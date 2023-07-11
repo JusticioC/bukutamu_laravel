@@ -173,7 +173,7 @@
 
             <div class="form-group">
                 <label>Jenis Kelamin</label>
-                <select name="jenkel" class="form-control" required>
+                <select name="jenkel" class="form-control">
                     <option value="">-- Pilih Jenis Kelamin --</option>
                     <option value="Laki - Laki">Laki - Laki</option>
                     <option value="Perempuan">Perempuan</option>
@@ -182,7 +182,7 @@
 
             <div class="form-group">
                 <label>Alamat</label>
-                <textarea name="alamat" class="form-control" required placeholder="Alamat Anda" required></textarea>
+                <textarea name="alamat" class="form-control" placeholder="Alamat Anda" required></textarea>
             </div>
 
             <div class="form-group">
@@ -197,12 +197,12 @@
 
             <div class="form-group">
                 <label>Maksud dan Tujuan</label>
-                <textarea name="maksud" class="form-control" required placeholder="Maksud dan Tujuan Anda" required></textarea>
+                <textarea name="maksud" class="form-control" placeholder="Maksud dan Tujuan Anda" required></textarea>
             </div>
 
             <div class="form-group">
                 <label>Kritik & Saran</label>
-                <textarea name="saran" class="form-control" required placeholder="Kritik dan Saran"></textarea>
+                <textarea name="saran" class="form-control" placeholder="Kritik dan Saran"></textarea>
             </div>
 
             <input type="submit" name="submit" class="btn" required value="Kirim">
