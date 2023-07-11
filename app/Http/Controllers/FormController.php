@@ -27,8 +27,6 @@ class FormController extends Controller
             'maksud' => 'required',
             'saran' => 'nullable',
         ]);
-
-        //FormData::submitForm($validatedData);
         
         $data = new FormData();
         $data->nama = $request->input('nama');
@@ -40,7 +38,7 @@ class FormController extends Controller
         $data->saran = $request->input('saran');
         $data->save();
 
-        return redirect('/success')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/sukses')->with('success', 'Data berhasil ditambahkan!');
     }
     
 }

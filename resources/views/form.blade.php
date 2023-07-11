@@ -164,7 +164,7 @@
             </div>
         @endif
 
-        <form action="{{ route('sukses.store') }}" method="POST">
+        <form action="{{ route('form.submit') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nama Lengkap</label>
@@ -173,7 +173,7 @@
 
             <div class="form-group">
                 <label>Jenis Kelamin</label>
-                <select name="jenkel" class="form-control" required>
+                <select name="jenkel" class="form-control">
                     <option value="">-- Pilih Jenis Kelamin --</option>
                     <option value="Laki - Laki">Laki - Laki</option>
                     <option value="Perempuan">Perempuan</option>
@@ -197,12 +197,12 @@
 
             <div class="form-group">
                 <label>Maksud dan Tujuan</label>
-                <textarea name="maksud" class="form-control" required placeholder="Maksud dan Tujuan Anda" required></textarea>
+                <textarea name="maksud" class="form-control" placeholder="Maksud dan Tujuan Anda" required></textarea>
             </div>
 
             <div class="form-group">
                 <label>Kritik & Saran</label>
-                <textarea name="saran" class="form-control" required placeholder="Kritik dan Saran"></textarea>
+                <textarea name="saran" class="form-control" placeholder="Kritik dan Saran"></textarea>
             </div>
 
             <input type="submit" name="submit" class="btn" required value="Kirim">
