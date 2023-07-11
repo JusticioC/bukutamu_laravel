@@ -46,3 +46,5 @@ Route::get('/sukses', function () {
     return view('sukses');
 });
 Route::post('/sukses', [SuksesController::class, 'store'])->name('sukses.store');
+
+

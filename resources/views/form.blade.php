@@ -182,7 +182,7 @@
 
             <div class="form-group">
                 <label>Alamat</label>
-                <textarea name="alamat" class="form-control" required placeholder="Alamat Anda" required></textarea>
+                <textarea name="alamat" class="form-control" placeholder="Alamat Anda" required></textarea>
             </div>
 
             <div class="form-group">
