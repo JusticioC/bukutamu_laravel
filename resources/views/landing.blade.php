@@ -39,6 +39,7 @@
         }
         /* Tambahan CSS */
         .navbar-nav.ml-auto .nav-link {
+            
             white-space: nowrap; /* Menjaga tulisan "Login Admin" agar satu baris */
         }
     </style>
