@@ -18,6 +18,16 @@ class FormController extends Controller
 
     public function submitForm(Request $request)
     {
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'jenkel' => 'required',
+            'alamat' => 'required',
+            'nohp' => 'required|max:13',
+            'email' => 'required|email',
+            'maksud' => 'required',
+            'saran' => 'nullable',
+        ]);
+        
         $data = new FormData();
         $data->nama = $request->input('nama');
         $data->jenkel = $request->input('jenkel');
