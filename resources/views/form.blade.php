@@ -164,7 +164,7 @@
             </div>
         @endif
 
-        <form action="{{ route('sukses.store') }}" method="POST">
+        <form action="{{ route('form.submit') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nama Lengkap</label>
