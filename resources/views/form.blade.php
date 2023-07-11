@@ -6,139 +6,125 @@
     <title>Formulir</title>
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <style>
-.btn-admin {
-			position: fixed;
-			top: 10px;
-			right: 10px;
-			padding: 10px 20px;
-			font-size: 14px;
-			font-weight: bold;
-			color: #ffffff;
-			background-color: #0062cc;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
 
-.form-control {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  transition: border-color 0.3s ease-in-out;
-}
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s ease-in-out;
+    }
 
-.form-control:focus {
-  outline: none;
-  border-color: #0062cc;
-}
+    .form-control:focus {
+        outline: none;
+        border-color: #0062cc;
+    }
 
-textarea.form-control {
-  resize: vertical;
-}
+    textarea.form-control {
+        resize: vertical;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  transition: background-color 0.3s ease-in-out;
-}
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s ease-in-out;
+    }
 
-.btn-primary {
-  color: #ffffff;
-  background-color: #0062cc;
-}
+    .btn-primary {
+        color: #ffffff;
+        background-color: #0062cc;
+    }
 
-.btn-primary:hover {
-  background-color: #005cbf;
-}
+    .btn-primary:hover {
+        background-color: #005cbf;
+    }
 
-		body {
-			background-color: #f1f1f1;
-			font-family: Arial, sans-serif;
-		}
+    body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+    }
 
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-		}
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-		h1 {
-			text-align: center;
-			color: #0062cc;
-		}
+    h1 {
+        text-align: center;
+        color: #0062cc;
+    }
 
-		.card {
-			background-color: #ffffff;
-			border-radius: 5px;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-			padding: 20px;
-			margin-bottom: 20px;
-		}
+    .card {
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
 
-		.card-header {
-			background-color: #0062cc;
-			color: #ffffff;
-			padding: 10px;
-			border-radius: 5px 5px 0 0;
-		}
+    .card-header {
+        background-color: #0062cc;
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+    }
 
-		.card-body {
-			padding: 10px;
-		}
+    .card-body {
+        padding: 10px;
+    }
 
-		label {
-			font-weight: bold;
-		}
+    label {
+        font-weight: bold;
+    }
 
-		.form-control {
-			margin-bottom: 10px;
-		}
+    .form-control {
+        margin-bottom: 10px;
+    }
 
-		.btn {
-			background-color: #0062cc;
-			color: #ffffff;
-			border: none;
-			padding: 10px 20px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
+    .btn {
+        background-color: #0062cc;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-		.alert {
-			margin-bottom: 10px;
-			padding: 10px;
-			border-radius: 5px;
-		}
+    .alert {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
 
-		.alert-success {
-			background-color: #c3e6cb;
-			color: #155724;
-		}
+    .alert-success {
+        background-color: #c3e6cb;
+        color: #155724;
+    }
 
-		.alert-danger {
-			background-color: #f8d7da;
-			color: #721c24;
-		}
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
     </style>
 </head>
 <body>
-    <a href="{{ url('login') }}" class="btn-admin">Admin</a>
     <div class="container">
         <h1>Isikan Data Anda</h1>
         <div class="card">
@@ -219,6 +205,7 @@ textarea.form-control {
             </div>
 
             <input type="submit" name="submit" class="btn" required value="Tambah">
+            <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
         </form>
     </div>
 </body>
