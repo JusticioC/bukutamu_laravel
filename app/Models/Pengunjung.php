@@ -12,9 +12,12 @@ class Pengunjung extends Model
     use HasFactory;
     protected $table = 'tbl_pengunjung';
     protected $fillable = ['nama', 'jenkel', 'alamat', 'nohp', 'email', 'maksud', 'saran','tanggal','created_at'];
+
+
     protected static function booted()
     {
         static::creating(function ($model) {
+            $model->created_at = Carbon::now();
             $model->tanggal = \Carbon\Carbon::now()->toDateString();
         });
     }
