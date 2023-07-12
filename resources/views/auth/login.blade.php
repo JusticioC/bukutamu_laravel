@@ -18,9 +18,9 @@
 
     <style>
     .card {
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px; 
     }
     </style>
 </head>
@@ -37,7 +37,7 @@
                 <ul class="navbar-nav ml-auto">
                     <marquee behavior="scroll"><font color="#FFFFFF">
                     <b>
-                    Selamat Datang di Dinas Komunikasi dan Informatika, Jl. Isdiman No. 5 Purbalingga. Tulis maksud dan tujuan berkunjung ke dinas kominfo.
+                    Selamat Datang di Dinas Komunikasi dan Informatika, Jl. Isdiman No. 5 Purbalingga.
                     </b>
                     </font></marquee>
                 </ul>
@@ -62,29 +62,23 @@
             <div class="col-md-7">
                 <div class="card card">
                     <div class="card-block">
-                        @if(session('alert'))
-                        <div class="alert alert-danger">
-                            {{ session('alert') }}
-                        </div>
-                        @endif
-
-                        @if(session('alert1'))
-                        <div class="alert alert-danger">
-                            {{ session('alert1') }}
-                        </div>
-                        @endif
-
-                        <form method="POST" action="{{ url('login/auth') }}">
+                        @if(session('error'))
+                             <div class="alert alert-danger">
+                          <b> {{session('error')}}</b>
+                      </div>
+                    @endif
+                        <h3><center><font color="#0062cc">LOGIN ADMINISTRATOR</font></center></h3>
+                        <form method="post" action= "{{ route ('actionlogin') }}">
                             @csrf
-                            <h3><center><font color="#0062cc">LOGIN ADMINISTRATOR</font></center></h3>
-                            <table>
+                            <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="username" value="" class="form-control">
+                                <input type="text" name="name" class="form-control" placeholder="username" required="" value="{{ old ('name')}}">
+                            </div>
+                            <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" value="" class="form-control">
-                                <br>
-                                <button class="btn btn-primary pull-right" name="Submit" value="Login">LOGIN</button>
-                            </table>
+                                <input type="password" name="password" class="form-control" placeholder="Password" required="" value="{{ old ('password')}}">
+                            </div>
+                            <button class="btn btn-primary pull-right" name="submit">LOG IN</button>
                         </form>
                         <br>
                     </div>

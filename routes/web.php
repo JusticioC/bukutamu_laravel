@@ -1,25 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\SuksesController;
+use App\Http\Controllers\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-//Route::get('/', function () {
-    //return view('welcome');
-//});
 
 Route::get('/', function () {
     return view('landing');
@@ -27,15 +14,6 @@ Route::get('/', function () {
 
 //Rute untuk menampilkan halaman landing
 Route::get('/landing', [LandingController::class, 'index'])->name('landing');
-
-// Rute untuk menampilkan halaman login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-
-// Rute untuk proses login
-Route::post('/login', [AuthController::class, 'login']);
-
-// Rute untuk proses logout
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //Rute untuk form
 Route::get('/form', [FormController::class, 'showForm'])->name('form.show');
@@ -47,4 +25,16 @@ Route::get('/sukses', function () {
 });
 Route::post('/sukses', [SuksesController::class, 'store'])->name('sukses.store');
 
+// Rute untuk menampilkan halaman login
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
+// Rute untuk proses login
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+//Rute Dashboard Admin
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
+//Rute Logout
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
