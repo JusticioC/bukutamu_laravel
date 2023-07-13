@@ -38,3 +38,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 //Rute Logout
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+
+
