@@ -25,18 +25,22 @@
             padding: 0;
         }
         .sidebar {
-            background: linear-gradient(to right, #667eea, #764ba2);
+            background-color: rgba(0, 0, 0, 0); /* Mengubah opacity menjadi 0.8 */
             width: 200px;
             height: 100vh;
             padding: 20px;
             color: #fff;
             position: fixed;
             z-index: 999;
-            transition: left 0.3s ease;
+            transition: all 0.3s ease; /* Mengubah properti transisi menjadi 'all' */
             overflow-y: auto;
         }
+        .sidebar.collapsed {
+            width: 70px; /* Mengubah lebar sidebar menjadi 70px saat menyusut */
+            overflow: hidden;
+        }
         .sidebar h2 {
-            font-size: 24px;
+            font-size: 18px; /* Mengubah ukuran font menjadi 18px */
             margin-bottom: 20px;
             text-align: center;
         }
@@ -57,6 +61,20 @@
         }
         .sidebar ul li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
+        }
+        .sidebar ul li a {
+            padding: 10px 20px; /* Mengubah padding menjadi 10px atas-bawah dan 20px kiri-kanan */
+            border-radius: 0; /* Menghapus radius border */
+        }
+        .sidebar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .sidebar.collapsed ul li a {
+            text-align: center; /* Mengubah posisi teks menjadi tengah saat menyusut */
+            padding: 10px; /* Mengubah padding menjadi 10px semua sisi saat menyusut */
+        }
+        .sidebar.collapsed h2 {
+            display: none; /* Menyembunyikan judul sidebar saat menyusut */
         }
         .navbar-brand img {
             width: 57px;
@@ -175,13 +193,11 @@
                 <div class="sidebar" id="sidebar">
                     <h2>Admin Dashboard</h2>
                     <ul>
-                        <li><a href="#form">Form</a></li>
                         <li><a href="#data">Data Pengunjung</a></li>
-                        <li><a href="{{ url('auth.dashboard') }}">Logout</a></li>
                         <!-- Tambahkan menu navigasi lainnya sesuai kebutuhan -->
                     </ul>
                 </div>
-                <div class="overlay"></div>
+                <div class="overlay" onclick="toggleSidebar()"></div>
             </div>
             <div class="col-md-10">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
@@ -195,8 +211,11 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleSidebar()">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
                             <ul class="navbar-nav ml-auto">
+                                <li class="nav-item ml-auto">
+                                    <a class="nav-link" href="{{ url('auth.dashboard') }}">Logout</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -255,26 +274,21 @@
             }).columns.adjust().responsive.recalc();
         });
 
-        window.addEventListener('scroll', function() {
-            var sidebar = document.getElementById("sidebar");
-            var navbar = document.querySelector('.navbar');
-            var navbarHeight = navbar.offsetHeight;
-            var content = document.querySelector('.content');
-            var sidebarFixed = document.querySelector('.sidebar.fixed');
-            if (window.pageYOffset >= navbarHeight) {
-                navbar.classList.add('fixed-top');
-                content.style.marginTop = navbarHeight + 'px';
-                sidebarFixed.style.top = navbarHeight + 'px';
-            } else {
-                navbar.classList.remove('fixed-top');
-                content.style.marginTop = '0';
-                sidebarFixed.style.top = '0';
+        var sidebar = document.getElementById("sidebar");
+
+        sidebar.addEventListener('mouseover', function() {
+            sidebar.classList.remove("collapsed");
+        });
+
+        sidebar.addEventListener('mouseout', function() {
+            if (!sidebar.classList.contains("show")) {
+                sidebar.classList.add("collapsed");
             }
         });
 
         function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("show");
+            sidebar.classList.remove("collapsed");
             var overlay = document.querySelector(".overlay");
             overlay.classList.toggle("show-sidebar");
         }
