@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Dashboard Admin</title>
+    @vite(['resources/sass/app.scss','resources/js/app.js'])
     <link href="{{ asset('assets/images/pbg.png') }}" rel="shortcut icon">
    <!-- Bootstrap core CSS -->
    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -51,10 +52,6 @@
 .sidebar ul li a:hover {
     color: white;
 }
-
-/*styledatatablesnya*/
-/*Overrides for Tailwind CSS */
-
 		/*Agar tabel berada di tengah halaman*/
 		/*Align center text in th*/
 		.centered-header {
