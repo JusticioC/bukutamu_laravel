@@ -21,7 +21,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 
 //Rute sukses
 Route::get('/sukses', function () {
-    return view('sukses');
+    return view('user.sukses');
 });
 Route::post('/sukses', [SuksesController::class, 'store'])->name('sukses.store');
 

@@ -38,7 +38,7 @@ class FormController extends Controller
         $data->saran = $request->input('saran');
         $data->save();
 
-        return redirect('/sukses')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('sukses')->with('success', 'Data berhasil ditambahkan!');
     }
     
 }
