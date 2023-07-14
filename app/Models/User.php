@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Validation\Rule;
 
 class User extends Authenticatable
 {
@@ -22,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -43,4 +45,28 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public static function boot()
+{
+    parent::boot();
+
+    static::saving(function ($user) {
+        $user->role = strtolower($user->role);
+    });
+}
+
+public static function roles()
+{
+    return ['admin', 'superadmin'];
+}
+
+public static function rules($userId = null)
+{
+    return [
+        // aturan validasi lainnya untuk kolom 'users',
+        'role' => ['required', Rule::in(static::roles())],
+    ];
+}
+
+
 }
