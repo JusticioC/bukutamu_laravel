@@ -39,4 +39,8 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('das
 //Rute Logout
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
+//Rute Superadmin
+Route::get('/superadmin/index', function () {
+    return view('superadmin.index');
+});
 
