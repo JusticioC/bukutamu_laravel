@@ -13,7 +13,7 @@ class FormController extends Controller
         $hari_ini = DB::table('tbl_pengunjung')->whereDate('TANGGAL', DB::raw('CURDATE()'))->count();
         $total = DB::table('tbl_pengunjung')->count();
 
-        return view('form', ['hari_ini' => $hari_ini, 'total' => $total]);
+        return view('user/form', ['hari_ini' => $hari_ini, 'total' => $total]);
     }
 
     public function submitForm(Request $request)
