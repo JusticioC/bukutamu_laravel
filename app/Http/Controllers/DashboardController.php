@@ -13,6 +13,6 @@ class DashboardController extends Controller
         $pengunjung = Pengunjung::all();
 
         // Tampilkan halaman dashboard dengan data pengunjung
-        return view('dashboard', compact('pengunjung'));
+        return view('admin/dashboard', compact('pengunjung'));
     }
 }
