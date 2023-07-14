@@ -8,8 +8,8 @@ class AddOpdIdToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedInteger('opd_id')->nullable();
-            $table->foreign('opd_id')->references('id')->on('opd');
+            $table->unsignedInteger('id_opd')->nullable();
+            $table->foreign('id_opd')->references('id')->on('opd');
         });
     }
 
