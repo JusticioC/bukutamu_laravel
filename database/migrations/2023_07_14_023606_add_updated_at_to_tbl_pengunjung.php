@@ -9,22 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('tbl_pengunjung', function (Blueprint $table) {
-            $table->timestamp('created_at')->nullable(); // Menambahkan kolom "created_at" dengan tipe timestamp
-           // $table->timestamp('created_at'); // Menambahkan kolom "created_at" dengan tipe timestamp
-
+            $table->timestamp('updated_at')->nullable();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('tbl_pengunjung', function (Blueprint $table) {
-            //
+            $table->dropColumn('updated_at');
         });
     }
 };

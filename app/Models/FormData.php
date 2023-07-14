@@ -10,7 +10,7 @@ class FormData extends Model
     use HasFactory;
 
 
-    public $timestamps = false;
+    public $timestamps = true;
     protected $table = 'tbl_pengunjung'; 
     protected $fillable = ['nama', 'jenkel', 'alamat', 'nohp', 'email', 'maksud', 'saran'];
 }
