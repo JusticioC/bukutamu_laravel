@@ -14,7 +14,7 @@ return array(
     'App\\Http\\Controllers\\LandingController' => $baseDir . '/app/Http/Controllers/LandingController.php',
     'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Controllers\\SuksesController' => $baseDir . '/app/Http/Controllers/SuksesController.php',
-    'App\\Http\\Controllers\\SuperadminController' => $baseDir . '/app/Http/Controllers/SuperadminController.php',
+    'App\\Http\\Controllers\\super\\SuperadminController' => $baseDir . '/app/Http/Controllers/super/SuperadminController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
