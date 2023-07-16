@@ -6,6 +6,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\SuksesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SuperadminController;
 
 
 Route::get('/', function () {
@@ -40,7 +41,4 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('das
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
 //Rute Superadmin
-Route::get('/superadmin/index', function () {
-    return view('superadmin.index');
-});
-
+Route::get('/superadmin/index', [SuperadminController::class, 'index'])->name('superadmin.index')->middleware('auth');
