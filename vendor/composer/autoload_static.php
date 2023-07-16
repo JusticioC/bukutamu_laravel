@@ -530,7 +530,7 @@ class ComposerStaticInitff9c73b01e7b4ecf1208d789d9ecd1a1
         'App\\Http\\Controllers\\LandingController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\SuksesController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuksesController.php',
-        'App\\Http\\Controllers\\super\\SuperadminController' => __DIR__ . '/../..' . '/app/Http/Controllers/super/SuperadminController.php',
+        'App\\Http\\Controllers\\SuperadminController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuperadminController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
