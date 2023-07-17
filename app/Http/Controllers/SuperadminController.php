@@ -110,7 +110,11 @@ class SuperadminController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        User::create($request->all());
+
+        $requestData = $request->all();
+        $requestData['role'] = 'admin'; // Mengisi kolom 'role' dengan nilai 'admin'
+    
+        User::create($requestData);
         return redirect()->route('superadmin.admin.user')->with('success', 'Admin berhasil ditambahkan');
     }
     public function createadmin(){

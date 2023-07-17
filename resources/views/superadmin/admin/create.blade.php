@@ -107,7 +107,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Nama</label>
-                                <input type="text" name="nama" id="name" class="form-control" required>
+                                <input type="text" name="name" id="name" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
