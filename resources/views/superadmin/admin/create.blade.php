@@ -85,7 +85,7 @@
                 <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
                 <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.opd.useropd')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
             </nav>
         </div>
 
@@ -99,7 +99,7 @@
                         <h3 class="card-title">Tambah Admin</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('superadmin.opd.store') }}" method="POST">
+                        <form action="{{ route('superadmin.admin.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="id">ID</label>
@@ -118,7 +118,7 @@
                                 <input type="password" name="password" id="password" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="{{ route('superadmin.opd.useropd') }}" class="btn btn-secondary">Kembali</a>
+                            <a href="{{ route('superadmin.admin.user') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>
                 </div>
