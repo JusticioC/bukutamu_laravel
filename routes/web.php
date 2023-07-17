@@ -44,6 +44,8 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 Route::get('/superadmin/index', [SuperadminController::class, 'index'])->name('superadmin.index')->middleware('auth');
 
 Route::get('/superadmin/pengunjung', [SuperadminController::class, 'pengunjung'])->name('superadmin.pengunjung');
+Route::get('/superadmin/opd/useropd', [SuperadminController::class, 'useropd'])->name('superadmin.opd.useropd');
+
 
 
 //Rute CRUD Superadmin
@@ -54,3 +56,13 @@ Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name
 Route::delete('/superadmin/{id}', [SuperadminController::class, 'destroy'])->name('superadmin.destroy');
 Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name('superadmin.edit');
 Route::put('superadmin/{id}/edit', [SuperadminController::class, 'update'])->name('superadmin.update');
+
+//Rute CRUD OPD Purbalingga Superadmin
+Route::get('/superadmin/opd', [SuperadminController::class, 'index'])->name('superadmin.opd.index');
+Route::post('/superadmin/opd', [SuperadminController::class, 'storeopd'])->name('superadmin.opd.store'); 
+Route::get('/superadmin/opd/create', [SuperadminController::class, 'createopd'])->name('superadmin.opd.create');
+Route::get('/superadmin/opd/{id}/edit', [SuperadminController::class, 'editopd'])->name('superadmin.opd.edit');
+Route::delete('/superadmin/opd/{id}', [SuperadminController::class, 'destroyopd'])->name('superadmin.opd.destroy');
+Route::get('/superadmin/opd/{id}/edit', [SuperadminController::class, 'editopd'])->name('superadmin.opd.edit');
+Route::put('superadmin/opd/{id}/edit', [SuperadminController::class, 'updateopd'])->name('superadmin.opd.update');
+

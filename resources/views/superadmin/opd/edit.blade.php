@@ -53,6 +53,17 @@
 </head>
 
 <body id="body-pd">
+<h1>Edit To Do List</h1>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <header class="header" id="header">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <div class="header_toggle"> 
@@ -89,43 +100,42 @@
                         <br>
                         <br>
                     
-                        <h1>Data Pengunjung</h1></div>
-                        <table id="example" class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>Tanggal</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Alamat</th>
-                                    <th>No. HP</th>
-                                    <th>Maksud</th>
-                                    <th>Saran</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Loop untuk menampilkan data pengunjung dari tbl_pengunjung -->
-                                @foreach ($pengunjung as $data)
-                                <tr>
-                                    <td>{{ $data->nama }}</td>
-                                    <td>{{ $data->tanggal }}</td>
-                                    <td>{{ $data->jenkel }}</td>
-                                    <td>{{ $data->alamat }}</td>
-                                    <td>{{ $data->nohp }}</td>
-                                    <td>{{ $data->maksud }}</td>
-                                    <td>{{ $data->saran }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    <h1>Edit OPD</h1></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit OPD</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('superadmin.edit', $opd->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <label for="nama">ID</label>
+                                <input type="text" name="id" id="id" class="form-control" value="{{ $opd->id }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" name="nama" id="nama" class="form-control" value="{{ $opd->nama }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ $opd->email }}" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
@@ -178,3 +188,4 @@
     </script>
 </body>
 </html>
+

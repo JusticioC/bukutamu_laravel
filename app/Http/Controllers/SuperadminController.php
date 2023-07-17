@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Opd;
 use Illuminate\Http\Request;
 use App\Models\Pengunjung;
+use App\Models\User;
 
 class SuperadminController extends Controller
 {
@@ -62,5 +63,56 @@ class SuperadminController extends Controller
         $pengunjung = Pengunjung::all();
 
         return view('superadmin.pengunjung', compact('pengunjung'));
+        
     }
+
+    //========================Function CRUD OPD Purbalingga============================
+
+    public function useropd(){
+        $user = User::all();
+        return view('superadmin.opd.useropd', compact('user'));
+    }
+    public function editopd($id)
+    {
+        $user = User::findOrFail($id);
+        return view('superadmin.opd.edit', compact('opd'));
+    }
+    public function updateopd(Request $request, $id)
+    {
+        $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+
+        ]);
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+
+        return redirect()->route('superadmin.opd.useropd')->with('success', 'Admin berhasil diperbarui');
+    }
+    public function destroyopd($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('superadmin.opd.useropd')->with('success', 'Entri berhasil dihapus');
+    }
+
+    public function storeopd(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        User::create($request->all());
+        return redirect()->route('superadmin.opd.useropd')->with('success', 'Admin berhasil ditambahkan');
+    }
+    public function createopd(){
+        return view('superadmin.opd.create');
+    
+    }
+
 }
