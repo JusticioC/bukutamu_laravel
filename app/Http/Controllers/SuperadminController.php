@@ -9,6 +9,9 @@ use App\Models\User;
 
 class SuperadminController extends Controller
 {
+
+        //========================Function CRUD OPD Purbalingga============================
+
     public function index()
     {
         $opd = Opd::all();
