@@ -65,7 +65,7 @@
             <h3 style="color: white;">Admin</h3>
         </a>
         <form class="d-flex">
-            <a href="{{ route('login') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
+            <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
             </form>
     </header>
     
