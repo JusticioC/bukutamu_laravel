@@ -12,8 +12,8 @@ class SuperadminController extends Controller
     public function index()
     {
         $opd = Opd::all();
-
-        return view('superadmin/index',compact ('opd'));
+        $user = User::all();
+        return view('superadmin/index',compact ('opd','user'));
     }
 
     public function edit($id)

@@ -48,7 +48,7 @@ Route::get('/superadmin/opd/useropd', [SuperadminController::class, 'useropd'])-
 
 
 
-//Rute CRUD Superadmin
+//Rute CRUD OPD Superadmin
 Route::get('/superadmin', [SuperadminController::class, 'index'])->name('superadmin.index');
 Route::post('/superadmin', [SuperadminController::class, 'store'])->name('superadmin.store'); 
 Route::get('/superadmin/create', [SuperadminController::class, 'create'])->name('superadmin.create');
@@ -57,7 +57,7 @@ Route::delete('/superadmin/{id}', [SuperadminController::class, 'destroy'])->nam
 Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name('superadmin.edit');
 Route::put('superadmin/{id}/edit', [SuperadminController::class, 'update'])->name('superadmin.update');
 
-//Rute CRUD OPD Purbalingga Superadmin
+//Rute CRUD Admin Purbalingga Superadmin ( Ketuker )
 Route::get('/superadmin/opd', [SuperadminController::class, 'index'])->name('superadmin.opd.index');
 Route::post('/superadmin/opd', [SuperadminController::class, 'storeopd'])->name('superadmin.opd.store'); 
 Route::get('/superadmin/opd/create', [SuperadminController::class, 'createopd'])->name('superadmin.opd.create');
