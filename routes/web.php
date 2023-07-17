@@ -63,6 +63,5 @@ Route::post('/superadmin/admin', [SuperadminController::class, 'storeadmin'])->n
 Route::get('/superadmin/admin/create', [SuperadminController::class, 'createadmin'])->name('superadmin.admin.create');
 Route::get('/superadmin/admin/{id}/edit', [SuperadminController::class, 'editadmin'])->name('superadmin.admin.edit');
 Route::delete('/superadmin/admin/{id}', [SuperadminController::class, 'destroyadmin'])->name('superadmin.admin.destroy');
-Route::get('/superadmin/admin/{id}/edit', [SuperadminController::class, 'editadmin'])->name('superadmin.admin.edit');
 Route::put('superadmin/admin/{id}/edit', [SuperadminController::class, 'updateadmin'])->name('superadmin.admin.update');
 

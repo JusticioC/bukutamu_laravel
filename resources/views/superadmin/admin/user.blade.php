@@ -109,8 +109,8 @@
                                     <td>{{ $data->nama }}</td>
                                     <td>{{ $data->email }}</td>
                                     <td>
-                                        <a href="{{ route('superadmin.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                        <form action="{{ route('superadmin.destroy', $data->id) }}" method="POST" class="d-inline">
+                                        <a href="{{ route('superadmin.admin.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                        <form action="{{ route('superadmin.admin.destroy', $data->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus OPD ini?')">Delete</button>

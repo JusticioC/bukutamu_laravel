@@ -83,9 +83,9 @@
     <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
-                <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
+                <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Admin</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Admin</span> </a></div>
             </nav>
         </div>
    
@@ -94,36 +94,36 @@
         <div class="container ml-5">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="dataopd">
+                    <div id="dataadmin">
                     <div class="block mt-11" >
                         <br>
                         <br>
                         <br>
                     
-                    <h1>Edit OPD</h1></div>
+                    <h1>Edit Admin</h1></div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edit OPD</h3>
+                        <h3 class="card-title">Edit Admin</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('superadmin.edit', $opd->id) }}" method="POST">
+                        <form action="{{ route('superadmin.edit', $user->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="nama">ID</label>
-                                <input type="text" name="id" id="id" class="form-control" value="{{ $opd->id }}" required>
+                                <input type="text" name="id" id="id" class="form-control" value="{{ $user->id }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="nama">Nama</label>
-                                <input type="text" name="nama" id="nama" class="form-control" value="{{ $opd->nama }}" required>
+                                <input type="text" name="nama" id="nama" class="form-control" value="{{ $user->nama }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" value="{{ $opd->email }}" required>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
