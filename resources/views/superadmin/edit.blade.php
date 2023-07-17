@@ -53,6 +53,17 @@
 </head>
 
 <body id="body-pd">
+<h1>Edit To Do List</h1>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <header class="header" id="header">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <div class="header_toggle"> 
@@ -71,7 +82,7 @@
     
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
+                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin Dashboard</span> </a>
                     <div class="nav_list"> <a href="#dataopd" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                <!-- </div> <a href="{{ route('login') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>-->
             </nav>
@@ -88,46 +99,46 @@
                         <br>
                         <br>
                     
-                    <h1>Data OPD</h1></div>
-                    <a href="{{ route('superadmin.create') }}" class="btn btn-primary mb-3">Tambah OPD</a>
-                        <table id="example" class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nama OPD</th>
-                                    <th>Alamat</th>
-                                    <th>Email</th>
-                                    <th>No. Telepon</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Loop untuk menampilkan data pengunjung dari tbl_pengunjung -->
-                                @foreach ($opd as $data)
-                                <tr>
-                                    <td>{{ $data->nama }}</td>
-                                    <td>{{ $data->alamat }}</td>
-                                    <td>{{ $data->email }}</td>
-                                    <td>{{ $data->nohp }}</td>
-                                    <td>
-                                        <a href="{{ route('superadmin.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                        <form action="{{ route('superadmin.destroy', $data->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus OPD ini?')">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    <h1>Edit OPD</h1></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit OPD</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('superadmin.edit', $opd->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" name="nama" id="nama" class="form-control" value="{{ $opd->nama }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat</label>
+                                <textarea name="alamat" id="alamat" class="form-control" rows="3" required>{{ $opd->alamat }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ $opd->email }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nohp">No. HP</label>
+                                <input type="text" name="nohp" id="nohp" class="form-control" value="{{ $opd->nohp }}" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
@@ -180,3 +191,4 @@
     </script>
 </body>
 </html>
+

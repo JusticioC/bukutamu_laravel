@@ -42,3 +42,12 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 
 //Rute Superadmin
 Route::get('/superadmin/index', [SuperadminController::class, 'index'])->name('superadmin.index')->middleware('auth');
+
+//Rute CRUD Superadmin
+Route::get('/superadmin', [SuperadminController::class, 'index'])->name('superadmin.index');
+Route::post('/superadmin', [SuperadminController::class, 'store'])->name('superadmin.store'); 
+Route::get('/superadmin/create', [SuperadminController::class, 'create'])->name('superadmin.create');
+Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name('superadmin.edit');
+Route::delete('/superadmin/{id}', [SuperadminController::class, 'destroy'])->name('superadmin.destroy');
+Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name('superadmin.edit');
+Route::put('superadmin/{id}/edit', [SuperadminController::class, 'update'])->name('superadmin.update');

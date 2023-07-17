@@ -164,21 +164,14 @@
             </div>
         @endif
 
-        <form action="{{ route('form.submit') }}" method="POST">
+        <form action="{{ route('form.submit', 'user') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nama Lengkap</label>
                 <input type="text" name="nama" class="form-control" required placeholder="Nama Lengkap">
             </div>
 
-            <div class="form-group">
-                <label>Jenis Kelamin</label>
-                <select name="jenkel" class="form-control">
-                    <option value="">-- Pilih Jenis Kelamin --</option>
-                    <option value="Laki - Laki">Laki - Laki</option>
-                    <option value="Perempuan">Perempuan</option>
-                </select>
-            </div>
+            
 
             <div class="form-group">
                 <label>Alamat</label>
