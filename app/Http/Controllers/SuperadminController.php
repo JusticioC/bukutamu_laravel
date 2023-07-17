@@ -57,4 +57,10 @@ class SuperadminController extends Controller
         return view('superadmin.create');
     
     }
+    public function pengunjung()
+    {
+        $pengunjung = Pengunjung::all();
+
+        return view('superadmin.pengunjung', compact('pengunjung'));
+    }
 }

@@ -69,7 +69,7 @@
             </form>
     </header>
     
-        <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
                 <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
@@ -90,34 +90,30 @@
                         <br>
                         <br>
                     
-                    <h1>Data OPD</h1></div>
-                    <a href="{{ route('superadmin.create') }}" class="btn btn-primary mb-3">Tambah OPD</a>
+                        <h1>Data Pengunjung</h1></div>
                         <table id="example" class="table">
                             <thead>
                                 <tr>
-                                    <th>Nama OPD</th>
+                                    <th>Nama</th>
+                                    <th>Tanggal</th>
+                                    <th>Jenis Kelamin</th>
                                     <th>Alamat</th>
-                                    <th>Email</th>
-                                    <th>No. Telepon</th>
-                                    <th>Action</th>
+                                    <th>No. HP</th>
+                                    <th>Maksud</th>
+                                    <th>Saran</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Loop untuk menampilkan data pengunjung dari tbl_pengunjung -->
-                                @foreach ($opd as $data)
+                                @foreach ($pengunjung as $data)
                                 <tr>
                                     <td>{{ $data->nama }}</td>
+                                    <td>{{ $data->tanggal }}</td>
+                                    <td>{{ $data->jenkel }}</td>
                                     <td>{{ $data->alamat }}</td>
-                                    <td>{{ $data->email }}</td>
                                     <td>{{ $data->nohp }}</td>
-                                    <td>
-                                        <a href="{{ route('superadmin.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                        <form action="{{ route('superadmin.destroy', $data->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus OPD ini?')">Delete</button>
-                                        </form>
-                                    </td>
+                                    <td>{{ $data->maksud }}</td>
+                                    <td>{{ $data->saran }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -127,6 +123,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

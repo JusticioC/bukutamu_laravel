@@ -43,6 +43,9 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 //Rute Superadmin
 Route::get('/superadmin/index', [SuperadminController::class, 'index'])->name('superadmin.index')->middleware('auth');
 
+Route::get('/superadmin/pengunjung', [SuperadminController::class, 'pengunjung'])->name('superadmin.pengunjung');
+
+
 //Rute CRUD Superadmin
 Route::get('/superadmin', [SuperadminController::class, 'index'])->name('superadmin.index');
 Route::post('/superadmin', [SuperadminController::class, 'store'])->name('superadmin.store'); 
