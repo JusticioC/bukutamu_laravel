@@ -66,18 +66,18 @@ class SuperadminController extends Controller
         
     }
 
-    //========================Function CRUD OPD Purbalingga============================
+    //========================Function CRUD Admin Purbalingga============================
 
-    public function useropd(){
+    public function useradmin(){
         $user = User::all();
-        return view('superadmin.opd.useropd', compact('user'));
+        return view('superadmin.admin.user', compact('user'));
     }
-    public function editopd($id)
+    public function editadmin($id)
     {
         $user = User::findOrFail($id);
-        return view('superadmin.opd.edit', compact('opd'));
+        return view('superadmin.admin.edit', compact('user'));
     }
-    public function updateopd(Request $request, $id)
+    public function updateadmin(Request $request, $id)
     {
         $request->validate([
             'id' => 'required',
@@ -89,17 +89,17 @@ class SuperadminController extends Controller
         $user = User::findOrFail($id);
         $user->update($request->all());
 
-        return redirect()->route('superadmin.opd.useropd')->with('success', 'Admin berhasil diperbarui');
+        return redirect()->route('superadmin.admin.user')->with('success', 'Admin berhasil diperbarui');
     }
-    public function destroyopd($id)
+    public function destroyadmin($id)
     {
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('superadmin.opd.useropd')->with('success', 'Entri berhasil dihapus');
+        return redirect()->route('superadmin.admin.user')->with('success', 'Entri berhasil dihapus');
     }
 
-    public function storeopd(Request $request)
+    public function storeadmin(Request $request)
     {
         $request->validate([
             'id' => 'required',
@@ -108,10 +108,10 @@ class SuperadminController extends Controller
             'password' => 'required',
         ]);
         User::create($request->all());
-        return redirect()->route('superadmin.opd.useropd')->with('success', 'Admin berhasil ditambahkan');
+        return redirect()->route('superadmin.admin.user')->with('success', 'Admin berhasil ditambahkan');
     }
-    public function createopd(){
-        return view('superadmin.opd.create');
+    public function createadmin(){
+        return view('superadmin.admin.create');
     
     }
 

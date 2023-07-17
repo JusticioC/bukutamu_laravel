@@ -44,7 +44,7 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 Route::get('/superadmin/index', [SuperadminController::class, 'index'])->name('superadmin.index')->middleware('auth');
 
 Route::get('/superadmin/pengunjung', [SuperadminController::class, 'pengunjung'])->name('superadmin.pengunjung');
-Route::get('/superadmin/opd/useropd', [SuperadminController::class, 'useropd'])->name('superadmin.opd.useropd');
+Route::get('/superadmin/admin/user', [SuperadminController::class, 'useradmin'])->name('superadmin.admin.user');
 
 
 
@@ -58,11 +58,11 @@ Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name
 Route::put('superadmin/{id}/edit', [SuperadminController::class, 'update'])->name('superadmin.update');
 
 //Rute CRUD Admin Purbalingga Superadmin ( Ketuker )
-Route::get('/superadmin/opd', [SuperadminController::class, 'index'])->name('superadmin.opd.index');
-Route::post('/superadmin/opd', [SuperadminController::class, 'storeopd'])->name('superadmin.opd.store'); 
-Route::get('/superadmin/opd/create', [SuperadminController::class, 'createopd'])->name('superadmin.opd.create');
-Route::get('/superadmin/opd/{id}/edit', [SuperadminController::class, 'editopd'])->name('superadmin.opd.edit');
-Route::delete('/superadmin/opd/{id}', [SuperadminController::class, 'destroyopd'])->name('superadmin.opd.destroy');
-Route::get('/superadmin/opd/{id}/edit', [SuperadminController::class, 'editopd'])->name('superadmin.opd.edit');
-Route::put('superadmin/opd/{id}/edit', [SuperadminController::class, 'updateopd'])->name('superadmin.opd.update');
+Route::get('/superadmin/admin', [SuperadminController::class, 'index'])->name('superadmin.admin.index');
+Route::post('/superadmin/admin', [SuperadminController::class, 'storeadmin'])->name('superadmin.admin.store'); 
+Route::get('/superadmin/admin/create', [SuperadminController::class, 'createadmin'])->name('superadmin.admin.create');
+Route::get('/superadmin/admin/{id}/edit', [SuperadminController::class, 'editadmin'])->name('superadmin.admin.edit');
+Route::delete('/superadmin/admin/{id}', [SuperadminController::class, 'destroyadmin'])->name('superadmin.admin.destroy');
+Route::get('/superadmin/admin/{id}/edit', [SuperadminController::class, 'editadmin'])->name('superadmin.admin.edit');
+Route::put('superadmin/admin/{id}/edit', [SuperadminController::class, 'updateadmin'])->name('superadmin.admin.update');
 
