@@ -75,7 +75,7 @@
                 <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
                 <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Admin OPD</span> </a></div>
             </nav>
         </div>
    
@@ -90,8 +90,8 @@
                         <br>
                         <br>
                     
-                    <h1>Data Admin OPD</h1></div>
-                    <a href="{{ route('superadmin.admin.create') }}" class="btn btn-primary mb-3">Tambah Admin OPD</a>
+                    <h1>Data Admin</h1></div>
+                    <a href="{{ route('superadmin.admin.create') }}" class="btn btn-primary mb-3">Tambah Admin</a>
                         <table id="example" class="table">
                             <thead>
                                 <tr>
@@ -108,8 +108,8 @@
                                 @foreach ($user as $data)
                                 @if ($data->role === 'admin') <!-- Tambahkan kondisi untuk memeriksa peran 'admin' -->
                                 <tr>
-                                    <td>{{ $data->id_opd }}</td>
-                                    <td>
+                                    <td style="word-wrap: break-word; max-width: 50px;">{{ $data->id_opd }}</td>
+                                    <td style="word-wrap: break-word; max-width: 200px;">
                                         @php
                                         $opd = \App\Models\Opd::find($data->id_opd); // Mengambil data OPD berdasarkan id_opd
                                         @endphp
@@ -121,7 +121,7 @@
                                     </td>
                                     <td>{{ $data->name }}</td>
                                     <td>{{ $data->email }}</td>
-                                    <td>{{ $data->password }}</td>
+                                    <td style="word-wrap: break-word; max-width: 200px;">{{ $data->password }}</td>
                                     <td>
                                         <a href="{{ route('superadmin.admin.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                         <form action="{{ route('superadmin.admin.destroy', $data->id) }}" method="POST" class="d-inline">

@@ -42,5 +42,7 @@ class FormController extends Controller
 
         return redirect('sukses')->with('success', 'Data berhasil ditambahkan!');
     }
+
+    
     
 }
