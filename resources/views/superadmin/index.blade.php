@@ -123,14 +123,14 @@
 
 <body id="body-pd">
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
+    <a class="navbar-brand d-flex align-items-center">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
                 
             </div>
             <div class="d-flex"></div>
-            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" href="{{ route('superadmin.index') }}">
+            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo">
             <h3 style="color: white;" href="superadmin/index.blade.php">Superadmin</h3>
         </a>
         <form class="d-flex">
@@ -143,7 +143,7 @@
                 <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
                 <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Data Admin</span> </a></div>
             </nav>
         </div>
 
@@ -163,34 +163,38 @@
             </div>
         </div>
     </div>
-                    <div class="container">
-                        <div class="row">
-                        <div class="col-md-3">
-                            <a href="{{ route('superadmin.opd.dataopd') }}">
-                        <div class="card-counter success">
-                            <i class="fa fa-database"></i>
-                                <span class="count-numbers" >{{$jumlah_opd}}</span>
-                                <span class="count-name">Data OPD</span></a>
-                        </div>
-                         </div>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{{ route('superadmin.opd.dataopd') }}" class="card-link">
+        <div class="card-counter success">
+          <i class="fa fa-database"></i>
+          <span class="count-numbers">{{ $jumlah_opd }}</span>
+          <span class="count-name">Data OPD</span>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{{ route('superadmin.pengunjung') }}" class="card-link">
+        <div class="card-counter info">
+          <i class="fa fa-users"></i>
+          <span class="count-numbers">{{ $jumlah_pengunjung }}</span>
+          <span class="count-name">Data Pengunjung</span>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{{ route('superadmin.admin.user') }}" class="card-link">
+        <div class="card-counter user">
+          <i class="fa fa-users"></i>
+          <span class="count-numbers">{{ $jumlah_user }}</span>
+          <span class="count-name">Data Admin</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 
-                        <div class="col-md-3">
-                                <div class="card-counter info">
-                                <i class="fa fa-users"></i>
-                                <span class="count-numbers">{{ $jumlah_pengunjung }}</span>
-                                <span class="count-name"> Data Pengunjung</span>
-                                </div>
-                            </div>
-
-                        <div class="col-md-3">
-                                <div class="card-counter user">
-                                <i class="fa fa-users"></i>
-                                <span class="count-numbers">{{ $jumlah_user }}</span>
-                                <span class="count-name"> Data User</span>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
 
     <!-- jQuery -->

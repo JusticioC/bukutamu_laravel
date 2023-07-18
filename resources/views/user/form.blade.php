@@ -211,17 +211,24 @@
 
             <div class="form-group">
                 <label>Maksud dan Tujuan</label>
-                <textarea name="maksud" class="form-control" placeholder="Maksud dan Tujuan Anda" required></textarea>
+                <textarea name="maksud" class="form-control" placeholder="Maksud dan Tujuan Anda" required oninput="checkInputLength(this, 100)"></textarea>
             </div>
 
             <div class="form-group">
                 <label>Kritik & Saran</label>
-                <textarea name="saran" class="form-control" placeholder="Kritik dan Saran"></textarea>
+                <textarea name="saran" class="form-control" placeholder="Kritik dan Saran" required oninput="checkInputLength(this, 100)"></textarea>
             </div>
 
             <input type="submit" name="submit" class="btn" required value="Kirim">
             <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
         </form>
     </div>
+    <script>
+    function checkInputLength(input, maxLength) {
+        if (input.value.length > maxLength) {
+            input.value = input.value.substring(0, maxLength);
+        }
+    }
+</script>
 </body>
 </html>

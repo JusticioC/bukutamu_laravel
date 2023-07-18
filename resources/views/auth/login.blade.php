@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DINAS KOMUNIKASI DAN INFORMATIKA</title>
+    <title>BUKU TAMU KABUPATEN PURBALINGGA</title>
     <link rel="shortcut icon" href="{{ asset('assets/images/pbg.png') }}"/>
 
     <!-- Bootstrap core CSS -->
@@ -25,25 +25,23 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custome  fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('pengunjung') }}" data-toggle="tooltip" title="Koneksine Wong Purbalingga">
-                <h3><center>WEB TAMU DINAS KOMUNIKASI DAN INFORMATIKA</center></h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <marquee behavior="scroll"><font color="#FFFFFF">
-                    <b>
-                    Selamat Datang di Dinas Komunikasi dan Informatika, Jl. Isdiman No. 5 Purbalingga.
-                    </b>
-                    </font></marquee>
-                </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-custome fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('landing') }}">
+            <div class="d-flex align-items-center">
+                <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
+                <h3 class="ml-2 mb-0">BUKU TAMU OPD KABUPATEN PURBALINGGA </h3>
             </div>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+            <!-- Navbar untuk Login Admin -->
+    </li>
+</ul>
         </div>
-    </nav>
+    </div>
+</nav>
     <br>
     <br>
     <!-- Page Content -->
@@ -80,13 +78,14 @@
                             </div>
                             <button class="btn btn-primary pull-right" name="submit">LOG IN</button>
                         </form>
-                        <br>
                     </div>
                 </div>
+                <a href="{{ url('/') }}" class="btn btn-primary">Kembali ke Halaman Utama</a>
+
             </div>
         </div>
     </div>
-    <center><a href="{{ url('/') }}" class="btn btn-primary">Kembali ke Halaman Utama</a></center>
+   
 
     <!-- /.container -->
 
@@ -94,7 +93,7 @@
     <footer class="py-5">
         <div class="container">
             <p class="m-0 text-center text-dark">
-                <a href="https://dinkominfo.purbalinggakab.go.id/" target="_blank"><font size="2"><script>document.write(new Date().getFullYear())</script> &copy; Dinas Komunikasi dan Informatika Kab. Purbalingga</font></a>
+                <a href="https://purbalinggakab.go.id/" target="_blank"><font size="2"><script>document.write(new Date().getFullYear())</script> &copy; Dinas Pemerintahan Kabupaten Purbalingga</font></a>
             </p>
         </div>
         <!-- /.container -->
