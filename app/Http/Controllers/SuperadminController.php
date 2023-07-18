@@ -95,7 +95,7 @@ class SuperadminController extends Controller
     public function updateadmin(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required',
+            'id_opd' => 'required',
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',

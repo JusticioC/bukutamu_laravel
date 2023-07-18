@@ -65,7 +65,7 @@
     </div>
 @endif
     <header class="header" id="header">
-    <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
+        <a class="navbar-brand d-flex align-items-center" href="#">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
@@ -111,14 +111,14 @@
                     </div>
                     <div class="card-body">
                         <form action="{{ route('superadmin.admin.edit', $user->id) }}" method="POST">
-                            @csrf 
+                            @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="nama">ID</label>
-                                <input type="text" name="id" id="id" class="form-control" value="{{ $user->id }}" required>
+                                <label for="id_opd">ID OPD</label>
+                                <input type="number" name="id_opd" id="id_opd" class="form-control" value="{{ $user->id_opd }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="nama">Nama</label>
+                                <label for="name">Nama</label>
                                 <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}" required>
                             </div>
                             <div class="form-group">
@@ -127,10 +127,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" value="{{ $user->password }}" required>
+                                <input type="password" name="password" id="password" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary" href="{{ route('superadmin.admin.user') }}" >Update</button>
-                            <a href="{{ route('superadmin.admin.user') }}" class="btn btn-secondary">Kembali</a>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>
                 </div>
