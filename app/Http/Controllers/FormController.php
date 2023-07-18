@@ -21,6 +21,7 @@ class FormController extends Controller
     public function submitForm(Request $request)
     {
         $validatedData = $request->validate([
+            'id_opd' => 'required',
             'nama' => 'required',
             'jenkel' => 'required',
             'alamat' => 'required',

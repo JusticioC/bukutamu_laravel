@@ -164,12 +164,13 @@
             </div>
         @endif
             <!-- Tambahkan bagian untuk pilihan OPD -->
-    <div class="card">
+        <form action="{{ route('form.submit', 'user') }}" method="POST">
+    <div class="form-group">
         <div class="card-header">
             <b>Pilih OPD</b>
         </div>
         <div class="card-body">
-            <select name="opd" class="form-control" required>
+            <select name="id_opd" class="form-control" required>
                 <!-- Loop untuk menampilkan opsi dari tabel 'opd' -->
                 @foreach ($opd as $dataOpd)
                     <option value="{{ $dataOpd->id }}">{{ $dataOpd->nama }}</option>
@@ -177,7 +178,6 @@
             </select>
         </div>
     </div>
-        <form action="{{ route('form.submit', 'user') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nama Lengkap</label>

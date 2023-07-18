@@ -11,7 +11,7 @@ class Pengunjung extends Model
     public $timestamps = false;
     use HasFactory;
     protected $table = 'tbl_pengunjung';
-    protected $fillable = ['nama', 'jenkel', 'alamat', 'nohp', 'email', 'maksud', 'saran','tanggal','created_at'];
+    protected $fillable = ['nama', 'jenkel', 'alamat', 'nohp', 'email', 'maksud', 'saran','tanggal','id_opd','created_at'];
 
 
     protected static function booted()
