@@ -195,6 +195,7 @@
                 <input type="text" name="email" class="form-control" required placeholder="Alamat E-mail">
             </div>
 
+
             <div class="form-group">
                 <label>Maksud dan Tujuan</label>
                 <textarea name="maksud" class="form-control" placeholder="Maksud dan Tujuan Anda" required></textarea>
