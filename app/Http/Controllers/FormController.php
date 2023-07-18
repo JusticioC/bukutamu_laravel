@@ -32,6 +32,7 @@ class FormController extends Controller
         ]);
         
         $data = new FormData();
+        $data->id_opd = $request->input('id_opd');
         $data->nama = $request->input('nama');
         $data->jenkel = $request->input('jenkel');
         $data->alamat = $request->input('alamat');
