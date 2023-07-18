@@ -54,14 +54,14 @@
 
 <body id="body-pd">
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center" href="{{ route('dashboard') }}">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
                 
             </div>
             <div class="d-flex"></div>
-            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" >
+            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo"  href="{{ route('dashboard') }}" >
             <h3 style="color: white;">Admin {{ Auth::user()->name }}</h3>
         </a>
         <form class="d-flex">
@@ -71,7 +71,7 @@
     
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
+                <div> <a href="{{ route('dashboard') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
                     <div class="nav_list"> <a href="#datapengunjung" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
                <!-- </div> <a href="{{ route('login') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>-->
             </nav>
