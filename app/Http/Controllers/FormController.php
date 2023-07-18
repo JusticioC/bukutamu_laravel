@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\FormData;
+use App\Models\Opd;
 
 class FormController extends Controller
 {
@@ -12,8 +13,9 @@ class FormController extends Controller
     {
         $hari_ini = DB::table('tbl_pengunjung')->whereDate('TANGGAL', DB::raw('CURDATE()'))->count();
         $total = DB::table('tbl_pengunjung')->count();
+        $opd = Opd::all(); // Mengambil semua data dari tabel 'opd'
 
-        return view('user/form', ['hari_ini' => $hari_ini, 'total' => $total]);
+        return view('user/form', ['hari_ini' => $hari_ini, 'total' => $total, 'opd' => $opd]);
     }
 
     public function submitForm(Request $request)

@@ -1,7 +1,4 @@
-<? 
-use App\Models\Opd;
 
-?>
 <!DOCTYPE html>
 <html>
 <head>

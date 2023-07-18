@@ -163,7 +163,20 @@
                 {{ session('alert1') }}
             </div>
         @endif
-
+            <!-- Tambahkan bagian untuk pilihan OPD -->
+    <div class="card">
+        <div class="card-header">
+            <b>Pilih OPD</b>
+        </div>
+        <div class="card-body">
+            <select name="opd" class="form-control" required>
+                <!-- Loop untuk menampilkan opsi dari tabel 'opd' -->
+                @foreach ($opd as $dataOpd)
+                    <option value="{{ $dataOpd->id }}">{{ $dataOpd->nama }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
         <form action="{{ route('form.submit', 'user') }}" method="POST">
             @csrf
             <div class="form-group">

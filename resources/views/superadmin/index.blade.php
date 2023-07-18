@@ -166,10 +166,11 @@
                     <div class="container">
                         <div class="row">
                         <div class="col-md-3">
+                            <a href="{{ route('superadmin.opd.dataopd') }}">
                         <div class="card-counter success">
                             <i class="fa fa-database"></i>
-                                <span class="count-numbers">{{$jumlah_opd}}</span>
-                                <span class="count-name">Data OPD</span>
+                                <span class="count-numbers" >{{$jumlah_opd}}</span>
+                                <span class="count-name">Data OPD</span></a>
                         </div>
                          </div>
 
