@@ -117,6 +117,17 @@
     display: block;
     font-size: 18px;
   }
+  .l-navbarr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  background-color: #000000; /* Ubah warna latar belakang sesuai kebutuhan */
+  color: #000000; /* Ubah warna teks sesuai kebutuhan */
+  font-size: 5px; /* Atur ukuran font sesuai kebutuhan */
+  padding-bottom: 20px; /* Atur padding bawah sesuai kebutuhan */
+}
 
     </style>
 </head>
@@ -139,11 +150,13 @@
     </header>
     
         <div class="l-navbar" id="nav-bar">
+          
             <nav class="nav">
-                <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
+                <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a> </div>
                 <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Data Admin</span> </a></div>
+                <div class="nav_list"> <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Data Admin</span> </a></div>
+                <div class="nav_list"> <span class="nav_name" style="margin-left: 60px; color: #212529;"><font size="1.5px"><script>document.write(new Date().getFullYear())</script> &copy; IF UNSOED 21</font></a></span> </class></div>
             </nav>
         </div>
 
