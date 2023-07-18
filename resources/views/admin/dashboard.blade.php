@@ -132,6 +132,7 @@
                             <tbody>
                                 <!-- Loop untuk menampilkan data pengunjung dari tbl_pengunjung -->
                                 @foreach ($pengunjung as $data)
+                                @if ($data->id_opd == Auth::user()->id_opd)
                                 <tr>
                                     <td>{{ $data->nama }}</td>
                                     <td>{{ $data->tanggal }}</td>
@@ -141,6 +142,7 @@
                                     <td>{{ $data->maksud }}</td>
                                     <td>{{ $data->saran }}</td>
                                 </tr>
+                                @endif
                                 @endforeach
                             </tbody>
                         </table>
