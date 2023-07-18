@@ -1,3 +1,7 @@
+<? 
+use App\Models\Opd;
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,13 +93,14 @@
                         <br>
                         <br>
                     
-                    <h1>Data User OPD</h1></div>
-                    <a href="{{ route('superadmin.admin.create') }}" class="btn btn-primary mb-3">Tambah User OPD</a>
+                    <h1>Data Admin OPD</h1></div>
+                    <a href="{{ route('superadmin.admin.create') }}" class="btn btn-primary mb-3">Tambah Admin OPD</a>
                         <table id="example" class="table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>ID OPD</th>
                                     <th>Nama OPD</th>
+                                    <th>Nama Admin</th>
                                     <th>Email</th>
                                     <th>Password</th>
                                     <th>Action</th>
@@ -106,7 +111,17 @@
                                 @foreach ($user as $data)
                                 @if ($data->role === 'admin') <!-- Tambahkan kondisi untuk memeriksa peran 'admin' -->
                                 <tr>
-                                    <td>{{ $data->id }}</td>
+                                    <td>{{ $data->id_opd }}</td>
+                                    <td>
+                                        @php
+                                        $opd = \App\Models\Opd::find($data->id_opd); // Mengambil data OPD berdasarkan id_opd
+                                        @endphp
+                                        @if ($opd)
+                                            {{ $opd->nama }} <!-- Menampilkan nama OPD -->
+                                        @else
+                                            Data OPD tidak ditemukan
+                                        @endif
+                                    </td>
                                     <td>{{ $data->name }}</td>
                                     <td>{{ $data->email }}</td>
                                     <td>{{ $data->password }}</td>
