@@ -16,15 +16,20 @@ class SuperadminController extends Controller
     {
         $opd = Opd::all();
         $user = User::all();
-        return view('superadmin/index',compact ('opd','user'));
+        //return view('superadmin/index',compact ('opd','user'));
+            // Menghitung jumlah user admin
+            $jumlah_user = User::where('role', 'admin')->count();
+            $jumlah_pengunjung = Pengunjung::count();
+            $jumlah_opd = Opd::count();
+            return view('superadmin.index', compact('user', 'jumlah_pengunjung','jumlah_opd','jumlah_user'));
     }
 
-    public function edit($id)
+    public function editopd($id)
     {
         $opd = Opd::findOrFail($id);
-        return view('superadmin.edit', compact('opd'));
+        return view('superadmin.opd.edit', compact('opd'));
     }
-    public function update(Request $request, $id)
+    public function updateopd(Request $request, $id)
     {
         $request->validate([
             'nama' => 'required',
@@ -38,7 +43,7 @@ class SuperadminController extends Controller
 
         return redirect()->route('superadmin.index')->with('success', 'OPD berhasil diperbarui');
     }
-    public function destroy($id)
+    public function destroyopd($id)
     {
         $opd = Opd::findOrFail($id);
         $opd->delete();
@@ -46,7 +51,7 @@ class SuperadminController extends Controller
         return redirect()->route('superadmin.index')->with('success', 'Entri berhasil dihapus');
     }
 
-    public function store(Request $request)
+    public function storeopd(Request $request)
     {
         $request->validate([
             'nama' => 'required',
@@ -57,8 +62,8 @@ class SuperadminController extends Controller
         Opd::create($request->all());
         return redirect()->route('superadmin.index')->with('success', 'Entri berhasil ditambahkan');
     }
-    public function create(){
-        return view('superadmin.create');
+    public function createopd(){
+        return view('superadmin.opd.create');
     
     }
     public function pengunjung()
@@ -66,7 +71,14 @@ class SuperadminController extends Controller
         $pengunjung = Pengunjung::all();
 
         return view('superadmin.pengunjung', compact('pengunjung'));
-        
+    
+    }
+    public function opd()
+    {
+        $opd = Opd::all();
+
+        return view('superadmin.opd.dataopd', compact('opd'));
+    
     }
 
     //========================Function CRUD Admin Purbalingga============================
@@ -121,5 +133,6 @@ class SuperadminController extends Controller
         return view('superadmin.admin.create');
     
     }
+   
 
 }

@@ -54,7 +54,7 @@
 
 <body id="body-pd">
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
@@ -68,16 +68,14 @@
             <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
             </form>
     </header>
-    
     <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
-                <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
+                <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
+                <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
             </nav>
         </div>
-   
 <div class="card">
     <div class="content">
         <div class="container ml-5">

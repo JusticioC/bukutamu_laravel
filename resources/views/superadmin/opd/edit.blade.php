@@ -24,10 +24,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
 
-    <!--COUNT DASHBOARD SUPERADMIN-->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
         :root{--header-height: 3.4rem;--nav-width: 68px;--first-color: #4723D9;--first-color-light: #AFA5D9;--white-color: #F7F6FB;--body-font: 'Nunito', sans-serif;--normal-font-size: 1rem;--z-fixed: 30}*,::before,::after{box-sizing: border-box}body{position: relative;margin: var(--header-height) 0 0 0;padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}a{text-decoration: none}.header{width: 100%;height: var(--header-height);position: fixed;top: 0;left: 0;display: flex;align-items: center;justify-content: space-between;padding: 0 1rem;background-color: #212529;z-index: var(--z-fixed);transition: .5s}.header_toggle{color: var(--white-color);font-size: 1.5rem;cursor: pointer}.header_img{width: 35px;height: 35px;display: flex;justify-content: center;border-radius: 50%;overflow: hidden}.header_img img{width: 40px}.l-navbar{position: fixed;top: 0;left: -30%;width: var(--nav-width);height: 100vh;background-color: #000000 ;padding: .5rem 1rem 0 0;transition: .5s;z-index: var(--z-fixed)}.nav{height: 100%;display: flex;flex-direction: column;justify-content: space-between;overflow: hidden}.nav_logo, .nav_link{display: grid;grid-template-columns: max-content max-content;align-items: center;column-gap: 1rem;padding: .5rem 0 .5rem 1.5rem}.nav_logo{margin-bottom: 2rem}.nav_logo-icon{font-size: 1.25rem;color: var(--white-color)}.nav_logo-name{color: var(--white-color);font-weight: 700}.nav_link{position: relative;color: var(--first-color-light);margin-bottom: 1.5rem;transition: .3s}.nav_link:hover{color: var(--white-color)}.nav_icon{font-size: 1.25rem}.show{left: 0}.body-pd{padding-left: calc(var(--nav-width) + 1rem)}.active{color: var(--white-color)}.active::before{content: '';position: absolute;left: 0;width: 2px;height: 32px;background-color: var(--white-color)}.height-100{height:100vh}@media screen and (min-width: 768px){body{margin: calc(var(--header-height) + 1rem) 0 0 0;padding-left: calc(var(--nav-width) + 2rem)}.header{height: calc(var(--header-height) + 1rem);padding: 0 2rem 0 calc(var(--nav-width) + 2rem)}.header_img{width: 40px;height: 40px}.header_img img{width: 45px}.l-navbar{left: 0;padding: 1rem 1rem 0 0}.show{width: calc(var(--nav-width) + 156px)}.body-pd{padding-left: calc(var(--nav-width) + 188px)}}
@@ -51,94 +47,40 @@
 
         .card{
             margin-left: 30px;
-            
         }
-
-        .card-counter{
-    box-shadow: 2px 2px 10px #DADADA;
-    margin: 2px;
-    padding: 20px 10px;
-    background-color: #fff;
-    height: 115px;
-    border-radius: 5px;
-    transition: .3s linear all;
-    margin-left: 35px;
-  }
-
-  .card-counter:hover{
-    box-shadow: 4px 4px 20px #DADADA;
-    transition: .3s linear all;
-    
-  }
-
-  .card-counter.primary{
-    background-color: #007bff;
-    color: #FFF;
-  }
-
-  .card-counter.danger{
-    background-color: #ef5350;
-    color: #FFF;
-  }  
-
-  .card-counter.success{
-    background-color: #66bb6a;
-    color: #FFF;
-  }  
-
-  .card-counter.info{
-    background-color: #26c6da;
-    color: #FFF;
-  }  
-  .card-counter.user{
-    background-color: lightcoral;
-    color: #FFF;
-  }  
-  .card-counter i{
-    font-size: 5em;
-    opacity: 0.3;
-  }
-
-  .card-counter .count-numbers{
-    position: absolute;
-    right: 35px;
-    top: 20px;
-    font-size: 32px;
-    display: block;
-  }
-
-  .card-counter .count-name{
-    position: absolute;
-    right: 35px;
-    top: 65px;
-    font-style: italic;
-    text-transform: capitalize;
-    opacity: 0.5;
-    display: block;
-    font-size: 18px;
-  }
 
     </style>
 </head>
 
 <body id="body-pd">
+<h1>Edit To Do List</h1>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
+    <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
                 
             </div>
             <div class="d-flex"></div>
-            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" href="{{ route('superadmin.index') }}">
-            <h3 style="color: white;" href="superadmin/index.blade.php">Superadmin</h3>
+            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo">
+            <h3 style="color: white;">Superadmin</h3>
         </a>
         <form class="d-flex">
             <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
             </form>
     </header>
     
-        <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
                 <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
@@ -146,54 +88,58 @@
                 <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
             </nav>
         </div>
-
-        
+   
+<div class="card">
     <div class="content">
         <div class="container ml-5">
             <div class="row">
                 <div class="col-md-12">
+                    <div id="dataopd">
                     <div class="block mt-11" >
                         <br>
                         <br>
                         <br>
-                        <br>
-                    <h1></h1>
+                    
+                    <h1>Edit OPD</h1></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit OPD</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('superadmin.opd.edit', $opd->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" name="nama" id="nama" class="form-control" value="{{ $opd->nama }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat</label>
+                                <textarea name="alamat" id="alamat" class="form-control" rows="3" required>{{ $opd->alamat }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ $opd->email }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nohp">No. HP</label>
+                                <input type="text" name="nohp" id="nohp" class="form-control" value="{{ $opd->nohp }}" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-                    <div class="container">
-                        <div class="row">
-                        <div class="col-md-3">
-                        <div class="card-counter success">
-                            <i class="fa fa-database"></i>
-                                <span class="count-numbers">{{$jumlah_opd}}</span>
-                                <span class="count-name">Data OPD</span>
-                        </div>
-                         </div>
 
-                        <div class="col-md-3">
-                                <div class="card-counter info">
-                                <i class="fa fa-users"></i>
-                                <span class="count-numbers">{{ $jumlah_pengunjung }}</span>
-                                <span class="count-name"> Data Pengunjung</span>
-                                </div>
-                            </div>
-
-                        <div class="col-md-3">
-                                <div class="card-counter user">
-                                <i class="fa fa-users"></i>
-                                <span class="count-numbers">{{ $jumlah_user }}</span>
-                                <span class="count-name"> Data User</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
@@ -244,8 +190,6 @@
     // Your code to run since DOM is loaded and ready
    });
     </script>
-    <!--COUNT DASHBOARD SUPERADMIN-->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
+

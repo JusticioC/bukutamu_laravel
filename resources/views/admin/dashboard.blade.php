@@ -61,8 +61,8 @@
                 
             </div>
             <div class="d-flex"></div>
-            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo">
-            <h3 style="color: white;">Admin</h3>
+            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" >
+            <h3 style="color: white;">Admin {{ Auth::user()->name }}</h3>
         </a>
         <form class="d-flex">
             <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>

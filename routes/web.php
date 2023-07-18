@@ -44,18 +44,18 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 Route::get('/superadmin/index', [SuperadminController::class, 'index'])->name('superadmin.index')->middleware('auth');
 
 Route::get('/superadmin/pengunjung', [SuperadminController::class, 'pengunjung'])->name('superadmin.pengunjung');
+Route::get('/superadmin/opd/dataopd', [SuperadminController::class, 'opd'])->name('superadmin.opd.dataopd');
 Route::get('/superadmin/admin/user', [SuperadminController::class, 'useradmin'])->name('superadmin.admin.user');
 
 
-
-//Rute CRUD OPD Superadmin
-Route::get('/superadmin', [SuperadminController::class, 'index'])->name('superadmin.index');
-Route::post('/superadmin', [SuperadminController::class, 'store'])->name('superadmin.store'); 
-Route::get('/superadmin/create', [SuperadminController::class, 'create'])->name('superadmin.create');
-Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name('superadmin.edit');
-Route::delete('/superadmin/{id}', [SuperadminController::class, 'destroy'])->name('superadmin.destroy');
-Route::get('/superadmin/{id}/edit', [SuperadminController::class, 'edit'])->name('superadmin.edit');
-Route::put('superadmin/{id}/edit', [SuperadminController::class, 'update'])->name('superadmin.update');
+//Rute CRUD OPD Purbalingga Superadmin
+Route::get('/superadmin', [SuperadminController::class, 'index'])->name('superadmin.opd.index');
+Route::post('/superadmin', [SuperadminController::class, 'storeopd'])->name('superadmin.opd.store'); 
+Route::get('/superadmin/create/opd', [SuperadminController::class, 'createopd'])->name('superadmin.opd.create');
+Route::get('/superadmin/opd/{id}/edit', [SuperadminController::class, 'editopd'])->name('superadmin.opd.edit');
+Route::delete('/superadmin/opd/{id}', [SuperadminController::class, 'destroyopd'])->name('superadmin.opd.destroy');
+Route::get('/superadmin/opd/{id}/edit', [SuperadminController::class, 'editopd'])->name('superadmin.opd.edit');
+Route::put('superadmin/opd/{id}/edit', [SuperadminController::class, 'updateopd'])->name('superadmin.opd.update');
 
 //Rute CRUD Admin Purbalingga Superadmin ( Ketuker )
 Route::get('/superadmin/admin', [SuperadminController::class, 'index'])->name('superadmin.admin.index');

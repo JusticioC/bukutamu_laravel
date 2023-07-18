@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Dashboard Superadmin</title>
+    <title>Dashboard Admin</title>
     @vite(['resources/sass/app.scss','resources/js/app.js'])
     <link href="{{ asset('assets/images/pbg.png') }}" rel="shortcut icon">
     <!-- Bootstrap core CSS -->
@@ -52,9 +52,9 @@
     </style>
 </head>
 
-<body id="body-pd">
-<h1>Edit To Do List</h1>
 
+<body id="body-pd">
+    <h1>Tambah OPD</h1>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -65,7 +65,7 @@
     </div>
 @endif
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
@@ -76,60 +76,49 @@
             <h3 style="color: white;">Superadmin</h3>
         </a>
         <form class="d-flex">
-            <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
             </form>
     </header>
     
     <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
-                <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
+                <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
+                <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
             </nav>
         </div>
-   
-<div class="card">
-    <div class="content">
-        <div class="container ml-5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="dataopd">
-                    <div class="block mt-11" >
-                        <br>
-                        <br>
-                        <br>
-                    
-                    <h1>Edit OPD</h1></div>
 
-    <div class="container">
+        <div class="card">
+            <div class="content">
+    <div class="container ml-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edit OPD</h3>
+                        <h3 class="card-title">Tambah OPD</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('superadmin.edit', $opd->id) }}" method="POST">
+                        <form action="{{ route('superadmin.opd.store') }}" method="POST">
                             @csrf
-                            @method('PUT')
+                           
                             <div class="form-group">
                                 <label for="nama">Nama</label>
-                                <input type="text" name="nama" id="nama" class="form-control" value="{{ $opd->nama }}" required>
+                                <input type="text" name="nama" id="nama" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <textarea name="alamat" id="alamat" class="form-control" rows="3" required>{{ $opd->alamat }}</textarea>
+                                <textarea name="alamat" id="alamat" class="form-control" rows="3" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" value="{{ $opd->email }}" required>
+                                <input type="email" name="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="nohp">No. HP</label>
-                                <input type="text" name="nohp" id="nohp" class="form-control" value="{{ $opd->nohp }}" required>
+                                <input type="text" name="nohp" id="nohp" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>
@@ -137,7 +126,10 @@
             </div>
         </div>
     </div>
-
+            </div>
+        </div>
+        </div>
+    </div>
  <!-- jQuery -->
  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Datatables -->
@@ -190,6 +182,6 @@
     // Your code to run since DOM is loaded and ready
    });
     </script>
-</body>
-</html>
+   </body>
+</html> 
 

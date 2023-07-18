@@ -171,8 +171,15 @@
                 <input type="text" name="nama" class="form-control" required placeholder="Nama Lengkap">
             </div>
 
-            
-
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <select name="jenkel" class="form-control" required>
+                    <option value="Pilih Jenis Kelamin" selected>Pilih Jenis Kelamin</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+           
             <div class="form-group">
                 <label>Alamat</label>
                 <textarea name="alamat" class="form-control" placeholder="Alamat Anda" required></textarea>

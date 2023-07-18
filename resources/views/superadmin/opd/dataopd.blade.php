@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Dashboard Admin</title>
+    <title>Dashboard Superadmin</title>
     @vite(['resources/sass/app.scss','resources/js/app.js'])
     <link href="{{ asset('assets/images/pbg.png') }}" rel="shortcut icon">
     <!-- Bootstrap core CSS -->
@@ -23,6 +23,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+
+    <!--COUNT DASHBOARD SUPERADMIN-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
@@ -49,23 +53,71 @@
             margin-left: 30px;
         }
 
+        .card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 115px;
+    border-radius: 5px;
+    transition: .3s linear all;
+  }
+
+  .card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+  }
+
+  .card-counter.primary{
+    background-color: #007bff;
+    color: #FFF;
+  }
+
+  .card-counter.danger{
+    background-color: #ef5350;
+    color: #FFF;
+  }  
+
+  .card-counter.success{
+    background-color: #66bb6a;
+    color: #FFF;
+  }  
+
+  .card-counter.info{
+    background-color: #26c6da;
+    color: #FFF;
+  }  
+
+  .card-counter i{
+    font-size: 5em;
+    opacity: 0.2;
+  }
+
+  .card-counter .count-numbers{
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 32px;
+    display: block;
+  }
+
+  .card-counter .count-name{
+    position: absolute;
+    right: 35px;
+    top: 65px;
+    font-style: italic;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block;
+    font-size: 18px;
+  }
+
     </style>
 </head>
 
-
 <body id="body-pd">
-    <h1>Tambah OPD</h1>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="{{ route('superadmin.index') }}">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
@@ -76,62 +128,70 @@
             <h3 style="color: white;">Superadmin</h3>
         </a>
         <form class="d-flex">
-            <a href="{{ route('login') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
+            <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
             </form>
     </header>
     
-    <div class="l-navbar" id="nav-bar">
+        <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
-                <div class="nav_list"> <a href="{{ route('superadmin.index') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
+                <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a>
+                <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
             </nav>
         </div>
+   
+<div class="card">
+    <div class="content">
+        <div class="container ml-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="dataopd">
+                    <div class="block mt-11" >
+                        <br>
+                        <br>
+                        <br>
 
-        <div class="card">
-            <div class="content">
-    <div class="container ml-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Tambah OPD</h3>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('superadmin.store') }}" method="POST">
-                            @csrf
-                           
-                            <div class="form-group">
-                                <label for="name">Nama</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="alamat">Alamat</label>
-                                <textarea name="alamat" id="alamat" class="form-control" rows="3" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="nohp">No. HP</label>
-                                <input type="text" name="nohp" id="nohp" class="form-control" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="{{ route('superadmin.index') }}" class="btn btn-secondary">Kembali</a>
-                        </form>
+                    <h1>Data OPD</h1></div>
+                    <a href="{{ route('superadmin.opd.create') }}" class="btn btn-primary mb-3">Tambah OPD</a>
+                        <table id="example" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nama OPD</th>
+                                    <th>Alamat</th>
+                                    <th>Email</th>
+                                    <th>No. Telepon</th>
+                                    <th class="col-md-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop untuk menampilkan data pengunjung dari tbl_pengunjung -->
+                                @foreach ($opd as $data)
+                                <tr>
+                                    <td>{{ $data->nama }}</td>
+                                    <td>{{ $data->alamat }}</td>
+                                    <td>{{ $data->email }}</td>
+                                    <td>{{ $data->nohp }}</td>
+                                    <td>
+                                        <a href="{{ route('superadmin.opd.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                        <form action="{{ route('superadmin.opd.destroy', $data->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus OPD ini?')">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-            </div>
-        </div>
-        </div>
-    </div>
- <!-- jQuery -->
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
@@ -182,6 +242,8 @@
     // Your code to run since DOM is loaded and ready
    });
     </script>
-   </body>
-</html> 
-
+    <!--COUNT DASHBOARD SUPERADMIN-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
