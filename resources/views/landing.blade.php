@@ -49,32 +49,24 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-custome fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url('landing') }}">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custome fixed-top">
+        <div class="container">
             <div class="d-flex align-items-center">
                 <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
-                <h3 class="ml-2 mb-0">BUKU TAMU OPD KABUPATEN PURBALINGGA </h3>
+                <div class="ml-2">
+                    <h3 class="mb-0 text-white">BUKU TAMU OPD KABUPATEN PURBALINGGA</h3>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto text-end">
+                            <marquee behavior="scroll"><font color="#FFFFFF">
+                                <p class="mb-0">Selamat Datang di Buku Tamu OPD Kabupaten Purbalingga. Tulis maksud dan tujuan berkunjung ke OPD Kabupaten Purbalingga.</p>
+                            </font></marquee>
+                        </ul>
+                        <a class="nav-link btn btn-light" href="{{ url('login') }}" style="position: absolute; top: 25%; right: 1%;">Login Admin</a>
+                    </div>
+                </div>
             </div>
-        </a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <marquee behavior="scroll"><font color="#FFFFFF">
-
-                <b>
-                    Selamat Datang di Buku Tamu OPD Kabupaten Purbalingga. Tulis maksud dan tujuan berkunjung ke OPD Kabupaten Purbalingga.
-                </b>
-                </font></marquee>
-            </ul>
-            <!-- Navbar untuk Login Admin -->
-            
-
-        <a class="nav-link btn btn-dark" href="{{ url('login') }}">Login Admin</a>
-    </li>
-</ul>
         </div>
-    </div>
-</nav>
+    </nav>
 <br>
 <br>
 <!-- Page Content -->
