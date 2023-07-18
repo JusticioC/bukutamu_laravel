@@ -117,7 +117,7 @@ class SuperadminController extends Controller
     public function storeadmin(Request $request)
     {
         $request->validate([
-            'id' => 'required',
+            'id_opd' => 'required',
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',

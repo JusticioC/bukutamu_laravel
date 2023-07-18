@@ -102,8 +102,8 @@
                         <form action="{{ route('superadmin.admin.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="id">ID</label>
-                                <input type="number" name="id" id="id" class="form-control" required>
+                                <label for="id_opd">ID OPD</label>
+                                <input type="number" name="id_opd" id="id_opd" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="name">Nama</label>
