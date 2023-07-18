@@ -41,7 +41,7 @@ class SuperadminController extends Controller
         $opd = Opd::findOrFail($id);
         $opd->update($request->all());
 
-        return redirect()->route('superadmin.index')->with('success', 'OPD berhasil diperbarui');
+        return redirect()->route('superadmin.opd.dataopd')->with('success', 'OPD berhasil diperbarui');
     }
     public function destroyopd($id)
     {
@@ -60,7 +60,7 @@ class SuperadminController extends Controller
             'nohp' => 'required',
         ]);
         Opd::create($request->all());
-        return redirect()->route('superadmin.index')->with('success', 'Entri berhasil ditambahkan');
+        return redirect()->route('superadmin.opd.dataopd')->with('success', 'Entri berhasil ditambahkan');
     }
     public function createopd(){
         return view('superadmin.opd.create');
