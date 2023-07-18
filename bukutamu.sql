@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jul 2023 pada 11.00
+-- Waktu pembuatan: 18 Jul 2023 pada 11.25
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -111,7 +111,7 @@ INSERT INTO `opd` (`id`, `nama`, `alamat`, `email`, `nohp`, `created_at`, `updat
 (3, 'Kantor Kesatuan Bangsa dan Politik', 'Jl. Jambu Karang No. 2', 'kesbangpol.purbalinggakab.go.id@gmail.com', '(0281) 893117', NULL, '2023-07-18 01:28:59'),
 (4, 'Inspektorat Daerah', 'Jl. Letkol Isdiman No. 73 B Purbalingga', 'inspektorat.purbalinggakab.go.id@gmail.com', '(0281) 891022', '2023-07-17 00:17:49', '2023-07-18 01:29:11'),
 (6, 'Dinas Lingkungan Hidup', 'Jl. Letkol Isdiman No. 117', 'dlh.purbalinggakab.go.id@gmail.com', '(0281)891065', '2023-07-17 11:18:18', '2023-07-18 01:28:42'),
-(7, 'Dinas Komunikasi dan Informatika', 'Jl. Letkol Isdiman No. 17A', 'dinkominfo.purbalinggakab@gmail.com', '(0281) 8902091', '2023-07-18 01:23:50', '2023-07-18 01:23:50');
+(7, 'Dinas Komunikasi dan Informatika', 'Jl. Letkol Isdiman No. 17A', 'dinkominfo.purbalinggakab.go.id@gmail.com', '(0281) 8902091', '2023-07-18 01:23:50', '2023-07-18 02:13:36');
 
 -- --------------------------------------------------------
 
@@ -453,12 +453,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `id_opd`) VALUES
-(1, 'roy', 'roy@gmail.com', NULL, '$2y$10$2AFZzvOkJSeoKlRssS.siubnFKA/bJrrYSRovPZx2SHU7D5yL8EP6', NULL, '2023-07-11 23:59:17', '2023-07-17 19:07:09', 'admin', 1),
+(1, 'Badan Penanggulangan Bencana Daerah', 'bpbd.purbalinggakab.go.id@gmail.com', NULL, '$2y$10$dZRnTkkXDCc0e0eqW2.4D.tWFSui0AJ4vLbeLptJYP21dLMn1xKbW', NULL, '2023-07-11 23:59:17', '2023-07-18 02:09:29', 'admin', 1),
 (2, 'ray', 'ray@gmail.com', NULL, '$2y$10$cWWr9RsOz9Nf1.HqPXKWl./gvQBHxystPmVT.sFa7NMnbcM.jRuAm', NULL, '2023-07-16 18:30:58', '2023-07-16 18:30:58', 'superadmin', NULL),
-(4, 'ppp', 'ppp@gmail.com', NULL, '$2y$10$Tc84kVFFo63UTvoOwgTluuAtD8uteMAsoc4jM.TouP18fGnf9jR/6', NULL, '2023-07-17 09:47:22', '2023-07-17 09:47:22', 'admin', NULL),
-(5, 'blaterr', 'blaterr@gmail.com', NULL, '$2y$10$jjROTa2Ol5M/p1rvjtWic.PXNa0nRGMp2v4HUWIYpSFg8TGZERX22', NULL, '2023-07-17 10:18:18', '2023-07-17 10:18:49', 'admin', NULL),
-(6, 'DLH', 'dinaslingkungan@gmail.com', NULL, '$2y$10$ghAhAwiP2rAtNjAKu2UPj.hZ/MjsJj4E9HRLJFLUvGUCXSNKgCZgS', NULL, '2023-07-17 11:19:44', '2023-07-17 18:59:32', 'admin', 6),
-(9, 'DLH', 'dlhh@gmail.com', NULL, '$2y$10$TXAPesqZneOXR9oUYk9ST.1iTrCtdpJHBSbSpuV27EOkyrCUOtU.a', NULL, '2023-07-17 18:54:23', '2023-07-17 18:54:23', 'admin', 6);
+(4, 'Inspektorat Daerah', 'inspektorat.purbalinggakab.go.id@gmail.com', NULL, '$2y$10$rVr7BPtkQ1e.jWFWbpkFLOz0Bk52mivDGrIH2gjHptu6Gj974yMdG', NULL, '2023-07-17 09:47:22', '2023-07-18 02:15:25', 'admin', 4),
+(5, 'Inspektorat Daerah Purbalingga', 'inspektorat.daerah.purbalingga.go.id@gmail.com', NULL, '$2y$10$F3.OSO4mu5/3RsSDNU6oK.KeuWpVrRLDTLdXuTwYiKyPLcZGvaXFy', NULL, '2023-07-17 10:18:18', '2023-07-18 02:24:35', 'admin', 4),
+(9, 'Dinas Lingkungan Hidup', 'dlh.purbalinggakab.go.id@gmail.com', NULL, '$2y$10$pxx2AYODCTwAIkZPTxUTrOMB2HaRfBPXsOymWTURjYgPw2zARL.5e', NULL, '2023-07-17 18:54:23', '2023-07-18 02:10:19', 'admin', 6),
+(10, 'Kantor Kesatuan Bangsa dan Politik', 'kesbangpol.purbalinggakab.go.ig@gmail.com', NULL, '$2y$10$h0MWnIaZP5kKH9.RgdmoWeHRH/5QUT7UqA4E/MgQ.2UVdjxOvOws6', NULL, '2023-07-18 02:11:34', '2023-07-18 02:11:34', 'admin', 3),
+(12, 'Dinas Komunikasi dan Informatika', 'dinkominfo.purbalinggakab.go.id@gmail.com', NULL, '$2y$10$.0rFRfRaR.64O.Vt5WhWjuaSOFN5YLCUylkxjIAGsLzHGRlaNDPhO', NULL, '2023-07-18 02:13:17', '2023-07-18 02:13:17', 'admin', 7);
 
 --
 -- Indexes for dumped tables
@@ -562,7 +563,7 @@ ALTER TABLE `tbl_pengunjung`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
