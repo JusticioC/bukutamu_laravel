@@ -104,7 +104,6 @@ use App\Models\Opd;
                                     <th>Nama OPD</th>
                                     <th>Nama Admin</th>
                                     <th>Email</th>
-                                    <th>Password</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -126,7 +125,6 @@ use App\Models\Opd;
                                     </td>
                                     <td>{{ $data->name }}</td>
                                     <td>{{ $data->email }}</td>
-                                    <td style="word-wrap: break-word; max-width: 200px;">{{ $data->password }}</td>
                                     <td>
                                         <a href="{{ route('superadmin.admin.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                         <form action="{{ route('superadmin.admin.destroy', $data->id) }}" method="POST" class="d-inline">
