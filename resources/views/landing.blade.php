@@ -42,7 +42,6 @@
                     </ul>
                 </div>
             </div>
-           
         </nav>
         <!-- Mashead header-->
         <header class="masthead">
