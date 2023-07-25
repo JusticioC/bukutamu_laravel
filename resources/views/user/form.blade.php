@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -16,18 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing/css/styles.css" rel="stylesheet" />
-    <style>
-body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        <style>
 
         .card {
             border: 1px solid #ddd;
@@ -85,7 +74,7 @@ body {
 
     .btn-primary {
         color: #ffffff;
-     
+        
     }
 
 
@@ -102,35 +91,30 @@ body {
         cursor: pointer;
     }
 
-        @media screen and (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .container {
-                width: 100%;
-            }
-        }
     </style>
-</head>
-<body id="page-top">
+    </head>
+    <body id="page-top">
 
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
-    <div class="container">
-        <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
-            <a class="navbar-brand fw-bold" href="">BUKU TAMU PERANGKAT DAERAH KABUPATEN PURBALINGGA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi-list"></i>
-                </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-        </div>
-    </div>
-</nav>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container">
+                <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
+                    <a class="navbar-brand fw-bold" href="">BUKU TAMU PERANGKAT DAERAH KABUPATEN PURBALINGGA</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
 
-<div class="container">
+                            <span class="small">
+                        <a href="{{ url('/') }}"> Kembali </a>
+                            </span>   
+                        </span>
+                    </button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
         <h1>Isikan Data Anda</h1>
         @if (session('alert'))
             <div class="alert alert-success">
@@ -147,7 +131,8 @@ body {
             <!-- Tambahkan bagian untuk pilihan OPD -->
         <form action="{{ route('form.submit', 'user') }}" method="POST">
 
-        
+        <br>
+        <br>
         <b>Pilih OPD Tujuan</b>
         <div class="card-body">
             <select name="id_opd" class="form-control" required>
@@ -200,36 +185,11 @@ body {
             </div>
 
             <input type="submit" name="submit" class="btn" required value="Kirim">
-            <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
         </form>
     </div>
 
-    <div class="container">
-        <h1>Jumlah Pengunjung</h1>
-        <div class="card">
-            <div class="card-header">
-                <b>Pengunjung Hari Ini</b>
-            </div>
-            <div class="card-body">
-                <h1>
-                    <font color="#0062cc">
-                        {{ $hari_ini }}
-                    </font>
-                </h1>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <b>Total Pengunjung</b>
-            </div>
-            <div class="card-body">
-                <h1>
-                    <font color="#0062cc">{{ $total }}</font>
-                </h1>
-            </div>
-        </div>
-
+    <br><br>
+  
     <script>
     function checkInputLength(input, maxLength) {
         if (input.value.length > maxLength) {
@@ -237,8 +197,9 @@ body {
         }
     }
 </script>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -246,5 +207,5 @@ body {
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</body>
+    </body>
 </html>
