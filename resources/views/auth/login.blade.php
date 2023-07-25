@@ -50,13 +50,6 @@
             <small></small>
         </h1>
         <div class="row">
-            <div class="col-md-5">
-                <center>
-                    <img src="{{ asset('assets/images/pbg.png') }}" width="50%" alt="">
-                    <br>
-                    <h5>Pemerintah Kabupaten Purbalingga</h5>
-                </center>
-            </div>
             <div class="col-md-7">
                 <div class="card card">
                     <div class="card-block">
@@ -81,7 +74,12 @@
                     </div>
                 </div>
                 <a href="{{ url('/') }}" class="btn btn-primary">Kembali ke Halaman Utama</a>
-
+            </div>
+            <div class="col-md-5">
+                <center>
+                    <img src="{{ asset('assets/images/pns2.png') }}" width="80%" alt="">
+                    <br>
+                </center>
             </div>
         </div>
     </div>
