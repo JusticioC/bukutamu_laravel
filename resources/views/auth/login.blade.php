@@ -21,10 +21,7 @@
         <style>
 
         .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
             padding: 10px;
-            margin-bottom: 20px;
         }
 
         .card-header {
@@ -114,6 +111,7 @@
                 </div>
             </div>
         </nav>
+        
          <!-- Page Content -->
          <header class="masthead">
     <div class="container">
@@ -121,13 +119,6 @@
             <small></small>
         </h1>
         <div class="row">
-            <div class="col-md-5">
-                <center>
-                    <img src="{{ asset('assets/images/pbg.png') }}" width="50%" alt="">
-                    <br>
-                    <h5>Pemerintah Kabupaten Purbalingga</h5>
-                </center>
-            </div>
             <div class="col-md-7">
                 <div class="card card">
                     <div class="card-block">
@@ -136,7 +127,7 @@
                           <b> {{session('error')}}</b>
                       </div>
                     @endif
-                        <h3><center><font color="#0062cc"> <br>LOGIN ADMINISTRATOR</font></center></h3>
+                        <h3><center><font color="black"> <br>LOGIN ADMINISTRATOR</font></center></h3>
                         <form method="post" action= "{{ route ('actionlogin') }}">
                             @csrf
                             <div class="form-group">
@@ -152,6 +143,12 @@
                         <br>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-5">
+                <center>
+                    <img src="{{ asset('assets/images/pns2.png') }}" width="80%" alt="">
+                    <br>
+                </center>
             </div>
         </div>
     </div>
