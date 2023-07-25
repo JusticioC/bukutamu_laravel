@@ -31,7 +31,7 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
                             <span class="d-flex align-items-center">
-                            <i class="bi-chat-text-fill me-2"></i>
+                            <i class="bi-box-arrow-in-right me-2"></i>
 
                             <span class="small">
                         <a href="{{ url('login') }}"> Login Admin </a>

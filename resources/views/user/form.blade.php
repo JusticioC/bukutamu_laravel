@@ -16,6 +16,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing/css/styles.css" rel="stylesheet" />
+
+    
         <style>
 
         .card {
@@ -113,7 +115,8 @@
                 </div>
             </div>
         </nav>
-
+        
+        <header class="masthead">
         <div class="container">
         <h1>Isikan Data Anda</h1>
         @if (session('alert'))
@@ -130,9 +133,6 @@
 
             <!-- Tambahkan bagian untuk pilihan OPD -->
         <form action="{{ route('form.submit', 'user') }}" method="POST">
-
-        <br>
-        <br>
         <b>Pilih OPD Tujuan</b>
         <div class="card-body">
             <select name="id_opd" class="form-control" required>
@@ -141,7 +141,6 @@
                     <option value="{{ $dataOpd->id }}">{{ $dataOpd->nama }}</option>
                 @endforeach
             </select>
-
     </div>
             @csrf
             <div class="form-group">
@@ -187,8 +186,7 @@
             <input type="submit" name="submit" class="btn" required value="Kirim">
         </form>
     </div>
-
-    <br><br>
+    </header>
   
     <script>
     function checkInputLength(input, maxLength) {
