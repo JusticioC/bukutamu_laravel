@@ -1,50 +1,121 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>BUKU TAMU PERANGKAT DAERAH PURBALINGGA</title>
+        <link href="{{ asset('assets/images/pbg.png') }}" rel="shortcut icon">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="landing/css/styles.css" rel="stylesheet" />
 
-    <title>BUKU TAMU KABUPATEN PURBALINGGA</title>
-    <link rel="shortcut icon" href="{{ asset('assets/images/pbg.png') }}"/>
+    
+        <style>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
 
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('assets/css/portfolio-item.css') }}" rel="stylesheet">
+        .card-header {
+            background-color: #f1f1f1;
+            padding: 5px;
+            font-weight: bold;
+        }
 
-    <style>
-    .card {
-        margin: 0 auto;
-        float: none;
-        margin-bottom: 10px; 
+        .card-body {
+            padding: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+
+        .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s ease-in-out;
     }
+
+    .btn-primary {
+        color: #ffffff;
+        
+    }
+
+
+    .btn-primary:hover {
+        background-color: #005cbf;
+    }
+
+    .btn {
+        background-color: #0062cc;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
     </style>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-custome fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url('landing') }}">
-            <div class="d-flex align-items-center">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container">
                 <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
-                <h3 class="ml-2 mb-0">BUKU TAMU OPD KABUPATEN PURBALINGGA </h3>
+                    <a class="navbar-brand fw-bold" href="">BUKU TAMU PERANGKAT DAERAH KABUPATEN PURBALINGGA</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+
+                            <span class="small">
+                        <a href="{{ url('/') }}"> Kembali </a>
+                            </span>   
+                        </span>
+                    </button>
+                    </ul>
+                </div>
             </div>
-        </a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-            </ul>
-            <!-- Navbar untuk Login Admin -->
-    </li>
-</ul>
-        </div>
-    </div>
-</nav>
-    <br>
-    <br>
-    <!-- Page Content -->
+        </nav>
+         <!-- Page Content -->
+         <header class="masthead">
     <div class="container">
         <h1 class="my-4">
             <small></small>
@@ -65,42 +136,39 @@
                           <b> {{session('error')}}</b>
                       </div>
                     @endif
-                        <h3><center><font color="#0062cc">LOGIN ADMINISTRATOR</font></center></h3>
+                        <h3><center><font color="#0062cc"> <br>LOGIN ADMINISTRATOR</font></center></h3>
                         <form method="post" action= "{{ route ('actionlogin') }}">
                             @csrf
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="name" class="form-control" placeholder="username" required="" value="{{ old ('name')}}">
+                                <input type="text" name="name" class="form-control" placeholder="Username" required="" value="{{ old ('name')}}">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" placeholder="Password" required="" value="{{ old ('password')}}">
                             </div>
-                            <button class="btn btn-primary pull-right" name="submit">LOG IN</button>
+                            <button class="btn btn-primary pull-right" name="submit">LOG IN</button> 
                         </form>
+                        <br>
                     </div>
                 </div>
-                <a href="{{ url('/') }}" class="btn btn-primary">Kembali ke Halaman Utama</a>
-
             </div>
         </div>
     </div>
-   
+</header>
+</script>
 
-    <!-- /.container -->
-
-    <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <p class="m-0 text-center text-dark">
-                <a href="https://purbalinggakab.go.id/" target="_blank"><font size="2"><script>document.write(new Date().getFullYear())</script> &copy; Dinas Pemerintahan Kabupaten Purbalingga</font></a>
-            </p>
-        </div>
-        <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+         <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-</body>
+    </body>
 </html>

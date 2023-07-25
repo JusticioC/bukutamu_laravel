@@ -17,7 +17,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing/css/styles.css" rel="stylesheet" />
 
-    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
         <style>
 
         .card {
@@ -93,10 +95,13 @@
         cursor: pointer;
     }
 
+    select2{
+        padding: 10px;
+    }
+
     </style>
     </head>
     <body id="page-top">
-
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
             <div class="container">
@@ -137,7 +142,7 @@
         <form action="{{ route('form.submit', 'user') }}" method="POST">
         <b>Pilih OPD Tujuan</b>
         <div class="card-body">
-            <select name="id_opd" class="form-control" required>
+            <select name="id_opd" class="form-control select2" required>
                 <!-- Loop untuk menampilkan opsi dari tabel 'opd' -->
                 @foreach ($opd as $dataOpd)
                     <option value="{{ $dataOpd->id }}">{{ $dataOpd->nama }}</option>
@@ -206,6 +211,14 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+        <script>
+            $(document).ready(function() {
+    $('.select2').select2({
+
+});
+});
+        </script>
     </body>
 </html>
