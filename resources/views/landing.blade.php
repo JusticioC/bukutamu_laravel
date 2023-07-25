@@ -18,22 +18,25 @@
         <link href="landing/css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
             <div class="container">
-            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
-                <a class="navbar-brand fw-bold" href="">BUKU TAMU PERANGKAT DAERAH KABUPATEN PURBALINGGA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi-list"></i>
-                </button>
+                <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo" width="50">
+                    <a class="navbar-brand fw-bold" href="">BUKU TAMU PERANGKAT DAERAH KABUPATEN PURBALINGGA</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi-list"></i>
+                        </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                        <span class="d-flex align-items-center">
+                        <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                            <span class="d-flex align-items-center">
                             <i class="bi-chat-text-fill me-2"></i>
+
                             <span class="small">
-                           <a href="{{ url('login') }}"> Login Admin </a>
+                        <a href="{{ url('login') }}"> Login Admin </a>
                             </span> 
+                            
                         </span>
                     </button>
                     </ul>

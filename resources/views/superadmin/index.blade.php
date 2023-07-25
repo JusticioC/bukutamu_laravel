@@ -135,11 +135,10 @@
 <body id="body-pd">
     <header class="header" id="header">
     <a class="navbar-brand d-flex align-items-center">
-            <div class="header_toggle"> 
-                
-                <i class='bx bx-menu' id="header-toggle"></i>
-                
+            <div class="header_toggle">  
+                <i class='bx bx-menu' id="header-toggle"></i>   
             </div>
+
             <div class="d-flex"></div>
             <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo">
             <h3 style="color: white;" href="superadmin/index.blade.php">Superadmin</h3>
@@ -149,8 +148,7 @@
             </form>
     </header>
     
-        <div class="l-navbar" id="nav-bar">
-          
+        <div class="l-navbar" id="nav-bar">      
             <nav class="nav">
                 <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a> </div>
                 <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
