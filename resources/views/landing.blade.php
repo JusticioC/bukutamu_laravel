@@ -75,7 +75,7 @@
         </header>
 
         <!-- Footer-->
-        <footer class="bg-black text-center py-5">
+        <footer class="bg-black text-center py-4">
             <div class="container px-5">
                 <div class="text-white-50 small">
                     <div class="mb-2">&copy; 2023. Dinas Pemerintahan Kabupaten Purbalingga.</div>

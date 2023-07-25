@@ -146,13 +146,22 @@
             </div>
             <div class="col-md-5">
                 <center>
+                    <a href="https://www.kindpng.com/imgv/ihmhiRo_receptionist-cartoon-png-png-download-receptionist-cartoon-png/" >
                     <img src="{{ asset('assets/images/pns2.png') }}" width="80%" alt="">
+                    </a>
                     <br>
                 </center>
             </div>
         </div>
     </div>
 </header>
+<footer class="bg-black text-center py-4">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; 2023. Dinas Pemerintahan Kabupaten Purbalingga.</div>
+                </div>
+            </div>
+        </footer>
 </script>
 
         <!-- Bootstrap core JS-->

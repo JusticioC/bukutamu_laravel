@@ -16,10 +16,12 @@
 .small-buku a{
   height: 10%;
   font-size: 25px; 
-  padding: 30px 100px;
+  padding: 20px 80px;
   color: #ffffff;
   text-decoration: none;
+  width: 100%;
 }
+
 
  .small a{
   color: #ffffff;
