@@ -118,8 +118,10 @@
         
         <header class="masthead">
         <div class="container">
-        <h1>Isikan Data Anda</h1>
-        @if (session('alert'))
+            <div class="container text-center">
+                <h1>Isikan Data Anda</h1>
+            </div>
+                    @if (session('alert'))
             <div class="alert alert-success">
                 {{ session('alert') }}
             </div>
