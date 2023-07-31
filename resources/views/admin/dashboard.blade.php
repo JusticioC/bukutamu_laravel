@@ -73,6 +73,7 @@
             <nav class="nav">
                 <div> <a href="{{ route('dashboard') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
                     <div class="nav_list"> <a href="#datapengunjung" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
+                    <div class="nav_list"> <a href="{{ route('edit-password') }}" class="nav_logo"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name"> Edit Password </span></a></div>
                <!-- </div> <a href="{{ route('login') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>-->
             </nav>
         </div>

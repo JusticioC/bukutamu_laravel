@@ -35,6 +35,9 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 // Rute untuk proses login
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 
+Route::get('/admin/edit-password', [LoginController::class,'editPassword'])->name('edit-password');
+Route::post('/admin/update-password', [LoginController::class,'updatePassword'])->name('update-password');
+
 //Rute Dashboard Admin
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
