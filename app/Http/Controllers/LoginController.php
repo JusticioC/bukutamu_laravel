@@ -30,27 +30,27 @@ class LoginController extends Controller
     }
     public function actionlogin(Request $request)
     {
-        $user = new User();
         $data = $request->validate([
             'name' => 'required',
             'password' => 'required',
         ]);
-
-
-        if (Auth::Attempt($data)) {
+    
+        if (Auth::attempt($data)) {
             $user = Auth::user();
-            if($user->role==='admin'){
-            return redirect('admin/dashboard');
-        }   else if($user->role=='superadmin'){
-            return redirect('superadmin/index');
-        }
-        else
-        {
+            if ($user->role === 'admin') {
+                return redirect('admin/dashboard');
+            } else if ($user->role === 'superadmin') {
+                return redirect('superadmin/index');
+            } else {
+                Session::flash('error', 'Username atau Password Salah');
+                return redirect()->back()->withInput();
+            }
+        } else {
             Session::flash('error', 'Username atau Password Salah');
             return redirect()->back()->withInput();
         }
     }
-    }
+    
     public function actionlogout()
     {
         Auth::logout();
