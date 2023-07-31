@@ -144,7 +144,7 @@
             <h3 style="color: white;" href="superadmin/index.blade.php">Superadmin</h3>
         </a>
         <form class="d-flex">
-            <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
+        <a href="#" onclick="confirmLogout()" class="btn btn-outline-light me-2" role="button">Logout</a>
             </form>
     </header>
     
@@ -268,5 +268,12 @@
     <!--COUNT DASHBOARD SUPERADMIN-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    function confirmLogout() {
+        if (confirm("Apakah Anda yakin ingin logout?")) {
+            window.location.href = "{{ route('actionlogout') }}";
+        }
+    }
+</script>
 </body>
 </html>
