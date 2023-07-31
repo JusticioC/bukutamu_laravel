@@ -122,11 +122,6 @@
             <div class="col-md-7">
                 <div class="card card">
                     <div class="card-block">
-                        @if(session('error'))
-                             <div class="alert alert-danger">
-                          <b> {{session('error')}}</b>
-                      </div>
-                    @endif
                         <h3><center><font color="black"> <br>LOGIN ADMINISTRATOR</font></center></h3>
                         
                         <!-- Menampilkan pesan error -->

@@ -168,7 +168,12 @@
                         <br>
                         <br>
                         <br>
-                    <h1></h1>
+                    <!-- Menampilkan pesan sukses -->
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
                     </div>
                 </div>
             </div>

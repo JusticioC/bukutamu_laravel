@@ -77,34 +77,6 @@
                <!-- </div> <a href="{{ route('login') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>-->
             </nav>
         </div>
-    <!--<nav class="navbar navbar-dark bg-dark static-top" >
-        <div class="container ml-10">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                toggle untuk memunculkan sidebar
-                <div class="nvb" id="header">
-                     <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
-                </div>
-                <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo">
-                <span class="navbar-brand mb-0 h1">Admin</span>
-            </a>
-            <form class="d-flex">
-            <a href="{{ route('login') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
-            </form>
-        </div>
-    </nav>
- 
-
-
-    <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
-                <div class="nav_list"> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-            </div> <a href="{{ route('login') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-        </nav>
-    </div>-->
-    <!--Container Main start-->
-    <!--Container Main end-->
 
 <div class="card">
     <div class="content">
@@ -116,7 +88,7 @@
                         <br>
                         <br>
                         <br>
-                    
+                        <br>
                     <h1>Data Pengunjung</h1></div>
                         <table id="example" class="table">
                             <thead>
