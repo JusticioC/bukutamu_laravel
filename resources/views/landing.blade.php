@@ -34,7 +34,7 @@
                             <i class="bi-box-arrow-in-right me-2"></i>
 
                             <span class="small">
-                        <a href="{{ url('login') }}"> Login Admin </a>
+                        <a href="{{ url('login') }}"> Login Admin</a>
                             </span> 
                             
                         </span>
@@ -54,7 +54,7 @@
                             <p class="lead fw-normal text-muted mb-5">
                                 Silakan tulis keperluan Anda di buku tamu.</p>
                         </div>
-                        <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-8" data-bs-toggle="modal">
+                        <button class="btn btn-primary rounded-pill px-1 mb-1 mb-lg-4" data-bs-toggle="modal">
                         <span class="d-flex align-items-center">
                             <span class="small-buku">
                             <a href="{{ url('form')}}">Buka Buku Tamu</a>

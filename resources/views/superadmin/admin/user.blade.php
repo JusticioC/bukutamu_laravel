@@ -96,6 +96,19 @@ use App\Models\Opd;
                         <br>
                     
                     <h1>Data Admin</h1></div>
+                                        <!-- Menampilkan pesan sukses -->
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<!-- Menampilkan pesan error -->
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
                     <a href="{{ route('superadmin.admin.create') }}" class="btn btn-primary mb-3">Tambah Admin</a>
                         <table id="example" class="table">
                             <thead>

@@ -17,10 +17,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing/css/styles.css" rel="stylesheet" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-        <style>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<style>
 
         .card {
             border: 1px solid #ddd;
@@ -95,8 +96,10 @@
         cursor: pointer;
     }
 
-    select2{
+    #select2{
         padding: 10px;
+        padding-top: 30px;
+
     }
 
     </style>
@@ -124,7 +127,7 @@
         <header class="masthead">
         <div class="container">
             <div class="container text-center">
-                <h1>Isikan Data Anda</h1>
+              <br> <h1>Isikan Data Anda</h1>
             </div>
                     @if (session('alert'))
             <div class="alert alert-success">
@@ -139,10 +142,10 @@
         @endif
 
             <!-- Tambahkan bagian untuk pilihan OPD -->
+            <div class="form-group">
         <form action="{{ route('form.submit', 'user') }}" method="POST">
-        <b>Pilih OPD Tujuan</b>
-        <div class="card-body">
-            <select name="id_opd" class="form-control select2" required>
+        <label>Pilih OPD Tujuan</label>
+            <select name="id_opd" class="form-control" id="select2" required>
                 <!-- Loop untuk menampilkan opsi dari tabel 'opd' -->
                 @foreach ($opd as $dataOpd)
                     <option value="{{ $dataOpd->id }}">{{ $dataOpd->nama }}</option>
@@ -151,14 +154,14 @@
     </div>
             @csrf
             <div class="form-group">
-                <label>Nama Lengkap</label>
+            <label>Nama Lengkap</label>
                 <input type="text" name="nama" class="form-control" required placeholder="Nama Lengkap">
             </div>
 
             <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenkel" class="form-control" required>
-                    <option value="Pilih Jenis Kelamin" selected>Pilih Jenis Kelamin</option>
+                    <option selected >Pilih Jenis Kelamin</option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
@@ -175,8 +178,8 @@
             </div>
 
             <div class="form-group">
-                <label>E-mail</label>
-                <input type="text" name="email" class="form-control" required placeholder="Alamat E-mail">
+                <label>Email</label>
+                <input type="text" name="email" class="form-control" required placeholder="Alamat Email">
             </div>
 
 
@@ -186,8 +189,8 @@
             </div>
             
             <div class="form-group">
-                <label>Kritik & Saran</label>
-                <textarea name="saran" class="form-control" placeholder="Kritik dan Saran" required oninput="checkInputLength(this, 100)"></textarea>
+                <label>Kritik dan Saran</label>
+                <textarea name="saran" class="form-control" placeholder="Kritik dan Saran Anda" required oninput="checkInputLength(this, 100)"></textarea>
             </div>
 
             <input type="submit" name="submit" class="btn" required value="Kirim">
@@ -215,10 +218,10 @@
 
         <script>
             $(document).ready(function() {
-    $('.select2').select2({
-
-});
+    $('#select2').select2({
+})
 });
         </script>
+        
     </body>
 </html>

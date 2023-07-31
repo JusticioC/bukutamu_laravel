@@ -116,7 +116,7 @@ form
             </div>
         </nav>
 
-        <br><br><br><br><br><br>
+        <br><br><br><br>
         <div class="container px-6">
         <h3>Terima kasih, 
         Anda telah berhasil mengisi formulir buku tamu!</h3>

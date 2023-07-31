@@ -155,6 +155,21 @@
                         <br>
 
                     <h1>Data OPD</h1></div>
+
+                    <!-- Menampilkan pesan sukses -->
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<!-- Menampilkan pesan error -->
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
                     <a href="{{ route('superadmin.opd.create') }}" class="btn btn-primary mb-3">Tambah OPD</a>
                         <table id="example" class="table">
                             <thead>

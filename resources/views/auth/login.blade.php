@@ -128,6 +128,13 @@
                       </div>
                     @endif
                         <h3><center><font color="black"> <br>LOGIN ADMINISTRATOR</font></center></h3>
+                        
+                        <!-- Menampilkan pesan error -->
+            @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
                         <form method="post" action= "{{ route ('actionlogin') }}">
                             @csrf
                             <div class="form-group">
