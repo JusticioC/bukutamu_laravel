@@ -62,7 +62,9 @@
             </div>
             <div class="d-flex"></div>
             <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo"  href="{{ route('dashboard') }}" >
-            <h3 style="color: white;">Admin {{ Auth::user()->name}}</h3>
+            @auth
+            <h3 style="color: white;">Admin {{ Auth::user()->name}}</h3>         
+            @endauth
         </a>
         <form class="d-flex">
             <a href="#" onclick="confirmLogout()" class="btn btn-outline-light me-2" role="button">Logout</a>
@@ -75,7 +77,6 @@
                 <div> <a href="{{ route('dashboard') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
                     <div class="nav_list"> <a href="{{ route('dashboard') }}" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
                     <div class="nav_list"> <a href="{{ route('edit-password') }}" class="nav_logo"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name"> Edit Password </span></a></div>
-               <!-- </div> <a href="{{ route('login') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>-->
             </nav>
         </div>
 
@@ -117,9 +118,6 @@
                 <input type="password" name="confirm_password" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Update Password</button>
-        
-       
-        <a href="{{ route('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
         </form>
     </div>
 
