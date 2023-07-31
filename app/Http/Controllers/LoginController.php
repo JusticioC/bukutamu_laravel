@@ -56,19 +56,16 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('admin/dashboard');
     }
-
-    
     public function editPassword()
 {
     return view('admin.edit-password');
 }
 public function updatePassword(Request $request)
 {
-    dd("Metode Update Password dipanggil.");
 
     $data = $request->validate([
         'current_password' => 'required',
-        'new_password' => 'required|min:8|different:current_password',
+        'new_password' => 'required|different:current_password',
         'confirm_password' => 'required|same:new_password',
     ]);
 

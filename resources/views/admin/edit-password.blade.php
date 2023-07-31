@@ -54,7 +54,7 @@
 
 <body id="body-pd">
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="{{ route('dashboard') }}">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
@@ -63,7 +63,7 @@
             <div class="d-flex"></div>
             <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo"  href="{{ route('dashboard') }}" >
             @auth
-            <h3 style="color: white;">Admin {{ Auth::user()->name}}</h3>         
+            <h3 style="color: white;">Admin {{ Auth::user()->name}}</h3>
             @endauth
         </a>
         <form class="d-flex">
