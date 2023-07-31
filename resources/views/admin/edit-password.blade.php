@@ -54,7 +54,7 @@
 
 <body id="body-pd">
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="{{ route('dashboard') }}">
+        <a class="navbar-brand d-flex align-items-center">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
