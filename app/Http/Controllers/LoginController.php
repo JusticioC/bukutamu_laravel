@@ -56,6 +56,8 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('admin/dashboard');
     }
+
+    
     public function editPassword()
 {
     return view('admin.edit-password');
