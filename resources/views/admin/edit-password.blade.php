@@ -65,7 +65,8 @@
             <h3 style="color: white;">Admin {{ Auth::user()->name}}</h3>
         </a>
         <form class="d-flex">
-            <a href="{{ route('actionlogout') }}" class="btn btn-outline-light me-2" role="button">Logout</a>
+            <a href="#" onclick="confirmLogout()" class="btn btn-outline-light me-2" role="button">Logout</a>
+
             </form>
     </header>
     
@@ -174,5 +175,13 @@
     // Your code to run since DOM is loaded and ready
    });
     </script>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Apakah Anda yakin ingin logout?")) {
+            window.location.href = "{{ route('actionlogout') }}";
+        }
+    }
+</script>
 </body>
 </html>
