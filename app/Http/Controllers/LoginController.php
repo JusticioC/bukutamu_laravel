@@ -62,6 +62,8 @@ class LoginController extends Controller
 }
 public function updatePassword(Request $request)
 {
+    dd("Metode Update Password dipanggil.");
+
     $data = $request->validate([
         'current_password' => 'required',
         'new_password' => 'required|min:8|different:current_password',
