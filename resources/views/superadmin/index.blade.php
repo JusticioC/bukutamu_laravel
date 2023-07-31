@@ -169,17 +169,19 @@
                         <br>
                         <br>
                     <!-- Menampilkan pesan sukses -->
-@if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="container">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
   <div class="row">
     <div class="col-md-3">
       <a href="{{ route('superadmin.opd.dataopd') }}" class="card-link">

@@ -89,6 +89,11 @@
                         <br>
                         <br>
                         <br>
+                        @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
                     <h1>Data Pengunjung</h1></div>
                         <table id="example" class="table">
                             <thead>

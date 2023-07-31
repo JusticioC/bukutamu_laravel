@@ -38,15 +38,15 @@ class LoginController extends Controller
         if (Auth::attempt($data)) {
             $user = Auth::user();
             if ($user->role === 'admin') {
-                return redirect('admin/dashboard');
+                return redirect('admin/dashboard')->with('success', 'Login berhasil');
             } else if ($user->role === 'superadmin') {
-                return redirect('superadmin/index');
+                return redirect('superadmin/index')->with('success', 'Login berhasil');
             } else {
                 Session::flash('error', 'Username atau Password Salah');
                 return redirect()->back()->withInput();
             }
         } else {
-            Session::flash('error', 'Username atau Password Salah');
+            Session::flash('error', 'Username atau Password salah');
             return redirect()->back()->withInput();
         }
     }
@@ -56,7 +56,7 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('admin/dashboard');
     }
-    public function editPassword()
+public function editPassword()
 {
     return view('admin.edit-password');
 }
