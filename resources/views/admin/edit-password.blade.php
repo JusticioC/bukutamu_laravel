@@ -104,6 +104,7 @@
         @endif
         <form method="post" action="{{ route('update-password') }}">
             @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="current_password">Current Password</label>
                 <input type="password" name="current_password" class="form-control" required>
