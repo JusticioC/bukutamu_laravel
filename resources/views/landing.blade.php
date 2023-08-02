@@ -16,6 +16,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing/css/styles.css" rel="stylesheet" />
+
+        <style>
+                    body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .thismasthead{
+padding-top: 5.5rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 1rem 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+        </style>
     </head>
     <body id="page-top">
 
@@ -44,7 +66,7 @@
             </div>
         </nav>
         <!-- Mashead header-->
-        <header class="masthead">
+        <header class="thismasthead">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
@@ -86,7 +108,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="landing/js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
