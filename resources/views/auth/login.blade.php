@@ -19,6 +19,22 @@
 
     
         <style>
+                                body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 1rem 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
 
         .card {
             padding: 10px;

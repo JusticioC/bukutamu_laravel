@@ -19,6 +19,13 @@ form
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing/css/styles.css" rel="stylesheet" />
         <style>
+        body {
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
 
         .card {
             border: 1px solid #ddd;

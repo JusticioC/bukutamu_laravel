@@ -26,10 +26,6 @@
             padding: 0;
             background-color: #f8f9fa;
         }
-        .thismasthead{
-padding-top: 5.5rem;
-        }
-
         footer {
             margin-top: auto;
             padding: 1rem 0;
@@ -66,7 +62,7 @@ padding-top: 5.5rem;
             </div>
         </nav>
         <!-- Mashead header-->
-        <header class="thismasthead">
+        <header class="masthead">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
