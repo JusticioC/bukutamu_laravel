@@ -38,7 +38,7 @@ class LoginController extends Controller
         if (Auth::attempt($data)) {
             $user = Auth::user();
             if ($user->role === 'admin') {
-                return redirect('admin/dashboard')->with('success', 'Login berhasil');
+                return redirect('admin/jumlahpengunjung')->with('success', 'Login berhasil');
             } else if ($user->role === 'superadmin') {
                 return redirect('superadmin/index')->with('success', 'Login berhasil');
             } else {

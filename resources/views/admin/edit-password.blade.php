@@ -54,14 +54,14 @@
 
 <body id="body-pd">
     <header class="header" id="header">
-        <a class="navbar-brand d-flex align-items-center" href="{{ route('dashboard') }}">
+        <a class="navbar-brand d-flex align-items-center">
             <div class="header_toggle"> 
                 
                 <i class='bx bx-menu' id="header-toggle"></i>
                 
             </div>
             <div class="d-flex"></div>
-            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo"  href="{{ route('dashboard') }}" >
+            <img src="{{ asset('assets/images/pbg.png') }}" alt="Logo"  href="{{ route('jumlahpengunjung') }}" >
             @auth
             <h3 style="color: white;">Admin {{ Auth::user()->name}}</h3>
             @endauth
@@ -74,7 +74,7 @@
     
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="{{ route('dashboard') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
+                <div> <a href="{{ route('jumlahpengunjung') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Dashboard</span> </a>
                     <div class="nav_list"> <a href="{{ route('dashboard') }}" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
                     <div class="nav_list"> <a href="{{ route('edit-password') }}" class="nav_logo"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name"> Edit Password </span></a></div>
             </nav>

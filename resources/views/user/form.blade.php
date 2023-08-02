@@ -161,7 +161,6 @@
             <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenkel" class="form-control" required>
-                    <option selected >Pilih Jenis Kelamin</option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>

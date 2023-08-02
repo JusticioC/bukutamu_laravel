@@ -41,6 +41,8 @@ Route::post('/admin/update-password', [LoginController::class,'updatePassword'])
 
 //Rute Dashboard Admin
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/admin/jumlahpengunjung', [DashboardController::class, 'jumlahPengunjung'])->name('jumlahpengunjung')->middleware('auth');
+
 
 //Rute Logout
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
