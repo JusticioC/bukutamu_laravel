@@ -13,6 +13,10 @@ class Pengunjung extends Model
     protected $table = 'tbl_pengunjung';
     protected $fillable = ['nama', 'jenkel', 'alamat', 'nohp', 'email', 'maksud', 'saran','tanggal','id_opd','created_at'];
 
+    public function opd()
+    {
+        return $this->belongsTo(OPD::class, 'id_opd');
+    }
 
     protected static function booted()
     {

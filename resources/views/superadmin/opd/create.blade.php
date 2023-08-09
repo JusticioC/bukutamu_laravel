@@ -82,11 +82,11 @@
     
     <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a> </div>
-                <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data OPD</span> </a></div>
+            <div> <a href="{{ route('superadmin.index') }}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Superadmin<br> Dashboard</span> </a> </div>
+                <div class="nav_list"> <a href="{{ route('superadmin.opd.dataopd') }}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Perangkat<br>Daerah</span> </a></div>
                 <div class="nav_list"> <a href="{{ route('superadmin.pengunjung')}}"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Pengunjung</span> </a></div>
-                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User OPD</span> </a></div>
-                <div class="nav_list"> <span class="nav_name" style="margin-left: 60px; color: #212529;"><font size="1.5px"><script>document.write(new Date().getFullYear())</script> &copy; IF UNSOED 21</font></a></span> </class></div>
+                <div class="nav_list">  <a href="{{ route('superadmin.admin.user')}}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Data Admin </span> </a></div>
+                <div class="nav_list"><span class="nav_name" style="margin-left: 60px; color: #212529;"><font size="1.5px"><script>document.write(new Date().getFullYear())</script> &copy; IF UNSOED 21</font></a></span> </class></div>
             </nav>
         </div>
 
@@ -97,7 +97,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah OPD</h3>
+                        <h3 class="card-title">Tambah Perangat Daerah</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('superadmin.opd.store') }}" method="POST">

@@ -152,7 +152,7 @@
             <!-- Tambahkan bagian untuk pilihan OPD -->
             <div class="form-group">
         <form action="{{ route('form.submit', 'user') }}" method="POST">
-        <label>Pilih OPD Tujuan</label>
+        <label>Pilih Perangkat Daerah Tujuan</label>
             <select name="id_opd" class="form-control" id="select2" required>
                 <!-- Loop untuk menampilkan opsi dari tabel 'opd' -->
                 @foreach ($opd as $dataOpd)
