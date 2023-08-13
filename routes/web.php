@@ -37,7 +37,7 @@ Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actio
 
 //Rute edit password
 Route::get('/admin/edit-password', [LoginController::class,'editPassword'])->name('edit-password')->middleware('auth');
-Route::post('/admin/update-password', [LoginController::class,'updatePassword'])->name('update-password')->middleware('auth');
+Route::put('/admin/update-password', [LoginController::class,'updatePassword'])->name('update-password')->middleware('auth');
 
 //Rute Dashboard Admin
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');

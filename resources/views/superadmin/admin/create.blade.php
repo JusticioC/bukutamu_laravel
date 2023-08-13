@@ -54,7 +54,9 @@
 
 
 <body id="body-pd">
-    <h1>Tambah Perangkat Daerah</h1>
+    <br>
+    <br>
+    <br>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

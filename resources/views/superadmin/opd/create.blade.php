@@ -54,7 +54,7 @@
 
 
 <body id="body-pd">
-    <h1>Tambah OPD</h1>
+    <br> <br> <br>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -97,7 +97,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Perangat Daerah</h3>
+                        <h3 class="card-title">Tambah Perangkat Daerah</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('superadmin.opd.store') }}" method="POST">

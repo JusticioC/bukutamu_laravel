@@ -99,6 +99,21 @@ form
         border-radius: 5px;
         cursor: pointer;
     }
+    body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+    footer {
+            margin-top: auto;
+            padding: 1rem 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
 
     </style>
     </head>
@@ -125,6 +140,8 @@ form
 
         <br><br><br><br>
         <div class="container px-6">
+            <br>
+            <br>
         <h3>Terima kasih, 
         Anda telah berhasil mengisi formulir buku tamu!</h3>
         <div class="card">
@@ -134,6 +151,14 @@ form
             </div>
         </div>
     </div>
+            <!-- Footer-->
+            <footer class="bg-black text-center py-4">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; 2023. Dinas Pemerintahan Kabupaten Purbalingga.</div>
+                </div>
+            </div>
+        </footer>
         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

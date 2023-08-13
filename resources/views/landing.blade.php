@@ -96,7 +96,8 @@
         <footer class="bg-black text-center py-4">
             <div class="container px-5">
                 <div class="text-white-50 small">
-                    <div class="mb-2">&copy; 2023. Dinas Pemerintahan Kabupaten Purbalingga.</div>
+                    <div class="mb-2">&copy; 2023. Dinas Pemerintahan Kabupaten Purbalingga. <br>
+                       Designed by: V01.2023 <a href="https://unsoed.ac.id">Unsoed</a></div>
                 </div>
             </div>
         </footer>

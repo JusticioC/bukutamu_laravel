@@ -183,7 +183,7 @@
 
 <div class="row">
     <div class="col-md-3">
-      <a href="{{ route('jumlahpengunjung') }}" class="card-link">
+      <a href="{{ route('dashboard') }}" class="card-link">
         <div class="card-counter success">
           <i class="fa fa-users"></i>
           <span class="count-numbers">{{ $jumlahPengunjung }}</span>

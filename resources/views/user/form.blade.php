@@ -107,8 +107,22 @@
     #select2{
         padding: 10px;
         padding-top: 30px;
-
     }
+    body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+    footer {
+            margin-top: auto;
+            padding: 1rem 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
 
     </style>
     </head>
@@ -204,6 +218,14 @@
         </form>
     </div>
     </header>
+            <!-- Footer-->
+            <footer class="bg-black text-center py-4">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; 2023. Dinas Pemerintahan Kabupaten Purbalingga.</div>
+                </div>
+            </div>
+        </footer>
   
     <script>
     function checkInputLength(input, maxLength) {
